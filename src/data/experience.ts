@@ -28,6 +28,18 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     iconName: 'Cpu'
   },
   {
+    title: 'Technology Experience',
+    role: 'Technology Participant',
+    organization: 'Skill Bridge Institute of Technology',
+    period: 'Experience',
+    description: 'Gained practical technology experience and strengthened software development skills through learning and hands-on work at Skill Bridge Institute of Technology.',
+    highlights: [
+      'Developed practical technical skills through structured learning and hands-on practice',
+      'Strengthened problem-solving, collaboration, and software development foundations'
+    ],
+    iconName: 'Building2'
+  },
+  {
     title: 'Autonomous AI Engineering',
     role: 'Self-Directed Systems Builder',
     organization: 'Independent Engineering',
