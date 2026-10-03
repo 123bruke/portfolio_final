@@ -56,7 +56,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
   return (
     <div
       id="resume-modal-overlay"
-      className="fixed inset-0 z-50 flex flex-col items-center bg-black/90 backdrop-blur-md overflow-hidden text-slate-900 transition-opacity duration-300"
+      className="fixed inset-0 z-50 flex flex-col items-center bg-black/90 backdrop-blur-md overflow-hidden text-black transition-opacity duration-300"
       onClick={onClose}
     >
       {/* Realistic PDF Reader Toolbar */}
@@ -156,7 +156,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         {/* Authentic White Papered PDF Sheet */}
         <div
           id="resume-white-paper"
-          className="relative w-full max-w-3xl bg-white text-slate-900 rounded-sm shadow-2xl p-8 sm:p-14 my-4 font-sans text-left transition-transform duration-200 origin-top ring-1 ring-black/10 select-text"
+          className="relative w-full max-w-3xl bg-white text-black rounded-sm shadow-2xl p-8 sm:p-14 my-4 font-sans text-left transition-transform duration-200 origin-top ring-1 ring-black/10"
           style={{ transform: `scale(${zoomLevel / 100})` }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -164,32 +164,32 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-black" />
 
           {/* Header Section */}
-          <div className="border-b-2 border-slate-800 pb-5 mb-6">
+          <div className="border-b-2 border-black pb-5 mb-6">
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
               <div>
-                <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif uppercase">
+                <h1 className="text-3xl sm:text-4xl font-black text-black tracking-tight font-serif uppercase">
                   {PERSONAL_INFO.name}
                 </h1>
                 <p className="text-xs sm:text-sm font-bold text-emerald-700 tracking-wider uppercase mt-1">
                   Full-Stack Developer • AI/ML Engineer
                 </p>
               </div>
-              <div className="text-[11px] text-slate-600 text-left sm:text-right font-medium space-y-0.5">
+              <div className="text-[11px] text-black text-left sm:text-right font-medium space-y-0.5">
                 <div>Addis Ababa / Adama, Ethiopia</div>
-                <div className="font-mono text-emerald-800 font-semibold">{PERSONAL_INFO.email}</div>
+                <div className="font-mono text-emerald-700 font-semibold">{PERSONAL_INFO.email}</div>
                 <div>{PERSONAL_INFO.phone}</div>
               </div>
             </div>
 
             {/* Links line */}
-            <div className="flex flex-wrap items-center gap-4 mt-3 text-[11px] text-slate-700 font-mono pt-2 border-t border-slate-200">
+            <div className="flex flex-wrap items-center gap-4 mt-3 text-[11px] text-black font-mono pt-2 border-t border-black/20">
               <a
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-emerald-700"
               >
-                <Github className="w-3 h-3 text-slate-900" />
+                <Github className="w-3 h-3 text-black" />
                 github.com/123bruke
               </a>
               <a
@@ -201,8 +201,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <Linkedin className="w-3 h-3 text-emerald-700" />
                 linkedin.com/in/biruk-ahmye
               </a>
-              <span className="flex items-center gap-1 text-slate-600">
-                <GraduationCap className="w-3 h-3 text-slate-700" />
+              <span className="flex items-center gap-1 text-black">
+                <GraduationCap className="w-3 h-3 text-black" />
                 ASTU Engineering (2024 — 2028)
               </span>
             </div>
@@ -210,70 +210,70 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Professional Summary */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-2 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Professional Summary
             </h2>
-            <p className="text-xs leading-relaxed text-slate-700">
-              Results-driven Engineering student at <strong>Adama Science and Technology University (ASTU, 2024 — 2028)</strong> specializing in full-stack web architectures, practical machine learning systems, and autonomous agent workflows. Experienced with end-to-end software lifecycles, RESTful and asynchronous API designs, vector databases, and responsive user interfaces. Proven problem solver with algorithmic practice and competitive coding.
+            <p className="text-xs leading-relaxed text-black">
+              Results-driven Engineering student at <strong>Adama Science and Technology University (ASTU, 2024 — 2028)</strong> specializing in full-stack web architectures, practical machine learning systems, and intelligent AI agents. Proven expertise in multi-agent orchestration, vector databases, and production-grade AI workflows. Combining academic rigor with hands-on engineering to solve complex problems.
             </p>
           </div>
 
           {/* Education */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-2.5 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Education
             </h2>
             <div className="flex justify-between items-baseline">
               <div>
-                <h3 className="text-sm font-bold text-slate-900">
+                <h3 className="text-sm font-bold text-black">
                   Adama Science and Technology University (ASTU)
                 </h3>
-                <p className="text-xs text-slate-700 font-medium">
+                <p className="text-xs text-black font-medium">
                   Bachelor of Science in Engineering / Computer Software
                 </p>
               </div>
               <div className="text-right">
-                <span className="text-xs font-bold text-slate-800 font-mono">2024 — Expected 2028</span>
+                <span className="text-xs font-bold text-black font-mono">2024 — Expected 2028</span>
               </div>
             </div>
-            <p className="text-[11px] text-slate-600 mt-1">
-              <strong>Core Coursework:</strong> Data Structures & Algorithms, Object-Oriented Design, Operating Systems, Database Management Systems, Machine Learning Foundations, Computer Networks, Software Engineering.
+            <p className="text-[11px] text-black mt-1">
+              <strong>Core Coursework:</strong> Data Structures & Algorithms, Object-Oriented Design, Operating Systems, Database Management Systems, Machine Learning Foundations, Computer Networks, Software Engineering
             </p>
           </div>
 
           {/* Technical Skills */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-2.5 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Technical Core Competencies
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-4 text-xs text-slate-700">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-4 text-xs text-black">
               <div>
-                <strong className="text-slate-900">Languages:</strong> Python, TypeScript, JavaScript (ES6+), C++, SQL, HTML5/CSS3
+                <strong className="text-black">Languages:</strong> Python, TypeScript, JavaScript (ES6+), C++, SQL, HTML5/CSS3
               </div>
               <div>
-                <strong className="text-slate-900">AI / ML:</strong> PyTorch, Scikit-Learn, LangChain, LangGraph, ChromaDB, Hugging Face
+                <strong className="text-black">AI / ML:</strong> PyTorch, Scikit-Learn, LangChain, LangGraph, ChromaDB, Hugging Face
               </div>
               <div>
-                <strong className="text-slate-900">Frontend:</strong> React 18, Next.js, Tailwind CSS, Responsive Design, State Management
+                <strong className="text-black">Frontend:</strong> React 18, Next.js, Tailwind CSS, Responsive Design, State Management
               </div>
               <div>
-                <strong className="text-slate-900">Backend & APIs:</strong> FastAPI, Node.js, Express, RESTful APIs, WebSockets
+                <strong className="text-black">Backend & APIs:</strong> FastAPI, Node.js, Express, RESTful APIs, WebSockets
               </div>
               <div>
-                <strong className="text-slate-900">Databases:</strong> PostgreSQL, MongoDB, Redis, Vector Databases, SQLite
+                <strong className="text-black">Databases:</strong> PostgreSQL, MongoDB, Redis, Vector Databases, SQLite
               </div>
               <div>
-                <strong className="text-slate-900">DevOps & Tools:</strong> Docker, Git & GitHub, Linux/Bash, Postman, Jest, CI/CD Actions
+                <strong className="text-black">DevOps & Tools:</strong> Docker, Git & GitHub, Linux/Bash, Postman, Jest, CI/CD Actions
               </div>
             </div>
           </div>
 
           {/* Key Projects */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-3 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-3 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Featured Technical Projects
             </h2>
@@ -282,12 +282,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Project 1 */}
               <div>
                 <div className="flex justify-between items-baseline">
-                  <h3 className="text-xs font-bold text-slate-900">
+                  <h3 className="text-xs font-bold text-black">
                     Autonomous Vendor Evaluation System
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-600">LangGraph • ChromaDB • Python • FastAPI</span>
+                  <span className="text-[10px] font-mono text-black">LangGraph • ChromaDB • Python • FastAPI</span>
                 </div>
-                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-slate-700 space-y-0.5">
+                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Built stateful multi-agent system coordinating automated vendor risk evaluation and audit reports.</li>
                   <li>Integrated ChromaDB vector search with sub-50ms query latency and 47/47 passing verification tests.</li>
                 </ul>
@@ -296,12 +296,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Project 2 */}
               <div>
                 <div className="flex justify-between items-baseline">
-                  <h3 className="text-xs font-bold text-slate-900">
+                  <h3 className="text-xs font-bold text-black">
                     Biomedical Knowledge Graph Engineering
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-600">BioCypher • Neo4j • Python • Ontologies</span>
+                  <span className="text-[10px] font-mono text-black">BioCypher • Neo4j • Python • Ontologies</span>
                 </div>
-                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-slate-700 space-y-0.5">
+                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Architected biomedical data pipelines harmonizing gene, disease, and compound knowledge representations.</li>
                   <li>Standardized multi-source data ingestion into validated Neo4j graph nodes and relationships.</li>
                 </ul>
@@ -310,12 +310,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               {/* Project 3 */}
               <div>
                 <div className="flex justify-between items-baseline">
-                  <h3 className="text-xs font-bold text-slate-900">
+                  <h3 className="text-xs font-bold text-black">
                     Full-Stack Interactive 3D & AI Web Application
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-600">React • TypeScript • Tailwind CSS • Three.js</span>
+                  <span className="text-[10px] font-mono text-black">React • TypeScript • Tailwind CSS • Three.js</span>
                 </div>
-                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-slate-700 space-y-0.5">
+                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Designed responsive, high-performance web applications with 3D canvas rendering and interactive states.</li>
                   <li>Delivered modular, accessible UI components with full support for light and night color themes.</li>
                 </ul>
@@ -325,7 +325,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Practical Experience & Leadership */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-2.5 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Experience & Academic Practice
             </h2>
@@ -333,13 +333,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
             <div className="space-y-2.5">
               <div>
                 <div className="flex justify-between items-baseline">
-                  <h3 className="text-xs font-bold text-slate-900">
+                  <h3 className="text-xs font-bold text-black">
                     AI Engineering & Research Intern — iCog Labs
                   </h3>
-                  <span className="text-[10px] font-mono text-slate-600">Internship / Research</span>
+                  <span className="text-[10px] font-mono text-black">Internship / Research</span>
                 </div>
-                <p className="text-[11px] font-medium text-slate-600">Addis Ababa, ET</p>
-                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-slate-700 space-y-0.5">
+                <p className="text-[11px] font-medium text-black">Addis Ababa, ET</p>
+                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Developed agentic workflows using LangGraph ReAct StateGraph and ChromaDB vector retrieval.</li>
                   <li>Researched biomedical knowledge pipelines with BioCypher and Neo4j schemas.</li>
                   <li>Authored automated test suites maintaining 100% pass rate across 47 validation tests.</li>
@@ -350,22 +350,22 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Certifications & Competitions */}
           <div>
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-slate-800 pb-1 border-b border-slate-300 mb-2 flex items-center gap-1.5">
+            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2 flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Problem Solving Profiles
             </h2>
-            <div className="flex flex-wrap items-center justify-between text-xs text-slate-700 gap-2">
+            <div className="flex flex-wrap items-center justify-between text-xs text-black gap-2">
               <div>
                 <strong>LeetCode (@brobruk):</strong> Data structures, graph algorithms, and dynamic programming
               </div>
-              <div className="font-mono text-[11px] text-slate-600">
+              <div className="font-mono text-[11px] text-black">
                 <strong>Kaggle (@brukeahmye):</strong> ML workflows and predictive modeling
               </div>
             </div>
           </div>
 
           {/* Footer of the White Paper */}
-          <div className="mt-8 pt-3 border-t border-slate-200 text-center text-[10px] text-slate-400 font-mono flex items-center justify-between">
+          <div className="mt-8 pt-3 border-t border-black/20 text-center text-[10px] text-black/60 font-mono flex items-center justify-between">
             <span>Biruk Ahmye — Technical Curriculum Vitae</span>
             <span>References and verification available upon request</span>
           </div>
