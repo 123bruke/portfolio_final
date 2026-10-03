@@ -7,7 +7,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'AI Agents',
     secondaryCategories: ['AI / ML', 'Backend'],
     description: 'Production-oriented fully local AI agent platform built with LangGraph, LangChain, Ollama, ChromaDB, and FastAPI.',
-    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized Supervisor agent receives user instructions, intelligently decomposes tasks, routes sub-goals across specialized Research, Writer, and Reviewer agents, and integrates long-term vector memory alongside short-term conversational context.',
+    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized[...]',
     technologies: ['Python', 'LangGraph', 'LangChain', 'Ollama', 'FastAPI', 'ChromaDB', 'LLMs', 'Vector Memory'],
     features: [
       'Fully local AI architecture executing on consumer hardware via Ollama',
@@ -41,12 +41,58 @@ export const FEATURED_PROJECTS: Project[] = [
     type: 'multi-agent'
   },
   {
+    id: 'moseb-job-portal',
+    title: 'Moseb AI-Powered Job Portal',
+    category: 'AI Agents',
+    secondaryCategories: ['Full-Stack', 'AI / ML'],
+    description: 'Enterprise-scale AI-powered job matching platform leveraging intelligent agents for resume analysis, job recommendation, and candidate-employer alignment.',
+    longDescription: 'A comprehensive job portal combining AI agents, machine learning, and full-stack architecture to revolutionize job matching. Implements multi-agent orchestration for candidate skill analysis, job requirement parsing, intelligent matching algorithms, and real-time notifications. Features include recruiter dashboards, candidate portfolios, AI-driven recommendation engines, and interview scheduling automation.',
+    technologies: ['React 19', 'TypeScript', 'Python', 'LangGraph', 'FastAPI', 'Firebase', 'Tailwind CSS', 'Lucide React', 'LLMs', 'Vector Embeddings', 'Zustand'],
+    features: [
+      'Multi-agent AI orchestration for intelligent job matching and candidate ranking',
+      'Resume parsing with skill extraction and proficiency level detection',
+      'Dynamic job requirement analysis with semantic understanding',
+      'Candidate recommendation engine powered by vector embeddings',
+      'Real-time job alerts and notification system with subscriber management',
+      'Recruiter dashboard with applicant tracking and filtering capabilities',
+      'Candidate portfolio showcase with skill endorsements and project links',
+      'Interview scheduling automation with calendar integration',
+      'AI-powered interview preparation assistant with mock questions',
+      'Salary estimation engine based on market data and skill levels',
+      'Search optimization with advanced filtering and faceted navigation'
+    ],
+    architectureSummary: 'Frontend Portal -> AI Agent Orchestrator -> Resume/Job Processors -> Vector Database -> Matching Engine -> Recruiter Dashboard',
+    architectureNodes: [
+      { id: 'candidate', label: 'Candidate Portal', role: 'Profile & Job Search Interface', highlight: false },
+      { id: 'recruiter', label: 'Recruiter Dashboard', role: 'Applicant Tracking & Management', highlight: false },
+      { id: 'orchestrator', label: 'Agent Orchestrator', role: 'Multi-Agent Coordination', highlight: true },
+      { id: 'resume-agent', label: 'Resume Processor', role: 'Skill Extraction & Parsing', highlight: false },
+      { id: 'job-agent', label: 'Job Analyzer', role: 'Requirement Parsing & Classification', highlight: false },
+      { id: 'match-agent', label: 'Matching Engine', role: 'Intelligent Job-Candidate Pairing', highlight: true },
+      { id: 'vector-db', label: 'Vector Database', role: 'Skill & Requirement Embeddings', highlight: false },
+      { id: 'recommendations', label: 'Recommendations', role: 'Ranked Job & Candidate Matches', highlight: true }
+    ],
+    architectureFlow: [
+      'Candidate Portal',
+      'Resume Upload',
+      'Resume Processor',
+      'Vector Database',
+      'Matching Engine',
+      'Job Recommendations',
+      'Real-time Alerts'
+    ],
+    testMetric: 'Integrated testing across AI agents, API endpoints, and frontend components with automated test pipelines.',
+    githubUrl: 'https://github.com/123bruke/Moseb_job_portal',
+    featured: true,
+    type: 'multi-agent'
+  },
+  {
     id: 'icog-vendor-agent',
     title: 'Autonomous Vendor Assessment Agent',
     category: 'AI Agents',
     secondaryCategories: ['RAG', 'Backend', 'AI / ML'],
-    description: 'Production-style agentic web application that evaluates software vendor requests using a LangGraph ReAct workflow, policy retrieval, evidence validation, deterministic decision logic, and audit trails.',
-    longDescription: 'Built as a comprehensive vendor evaluation engine combining agentic reasoning with strict corporate governance. Employs a StateGraph-powered ReAct execution loop that retrieves compliance policies via ChromaDB, cross-references risk factors, verifies evidence freshness, protects against prompt injection, and outputs verifiable decision audits.',
+    description: 'Production-style agentic web application that evaluates software vendor requests using a LangGraph ReAct workflow, policy retrieval, evidence validation, deterministic decision l[...]',
+    longDescription: 'Built as a comprehensive vendor evaluation engine combining agentic reasoning with strict corporate governance. Employs a StateGraph-powered ReAct execution loop that retriev[...]',
     technologies: ['Python', 'LangGraph', 'ChromaDB', 'RAG', 'SQLite', 'SQLAlchemy', 'Flask', 'Gemini', 'pytest'],
     testMetric: '47 automated tests with 100% passing according to the project documentation.',
     features: [
@@ -85,7 +131,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'Research',
     secondaryCategories: ['AI / ML'],
     description: 'Research-oriented engineering project integrating complex biomedical datasets into structured graph ontologies using BioCypher, Neo4j, and KGX workflows.',
-    longDescription: 'Focuses on the engineering challenges of biomedical knowledge representation. Combines heterogeneous data sources into a unified knowledge graph schema, mapping entities and relations using formal ontologies, graph data models, and KGX export/import pipelines for downstream computational biology and reasoning.',
+    longDescription: 'Focuses on the engineering challenges of biomedical knowledge representation. Combines heterogeneous data sources into a unified knowledge graph schema, mapping entities and [...]',
     technologies: ['Python', 'BioCypher', 'Neo4j', 'Biomedical Data', 'Ontologies', 'KGX Workflows', 'MORK', 'Graph Algorithms'],
     features: [
       'Declarative schema mapping linking biomedical concepts with standard ontologies',
@@ -112,7 +158,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: '3D / Interactive',
     secondaryCategories: ['Full-Stack'],
     description: 'An interactive browser-based 3D chemistry laboratory designed for learning by doing, with physical equipment simulation and AI guidance.',
-    longDescription: 'A modern web-based simulation environment that gives students hands-on lab experience directly in their browser. Implements accurate physics-based liquid transfers, digital balance taring, graduated cylinder meniscus readings, density calculations, and Google GenAI SDK integration for real-time interactive experiment guidance.',
+    longDescription: 'A modern web-based simulation environment that gives students hands-on lab experience directly in their browser. Implements accurate physics-based liquid transfers, digital [...]',
     technologies: ['React 19', 'TypeScript', 'Three.js', 'React Three Fiber', 'Zustand', 'Tailwind CSS', 'Vite', 'Express', 'Google GenAI SDK'],
     features: [
       'Interactive 3D laboratory scene built with React Three Fiber and Three.js',
@@ -134,7 +180,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'Full-Stack',
     secondaryCategories: ['Backend'],
     description: 'A responsive real-time messaging application built with React, TypeScript, Firebase Authentication, and Firestore.',
-    longDescription: 'Engineered for smooth communication with high operational reliability. Features instant one-to-one messaging, live presence indicators (online/offline/last seen), read receipts, unread counter badges, file attachments, and comprehensive Firestore security rules guarding user data privacy.',
+    longDescription: 'Engineered for smooth communication with high operational reliability. Features instant one-to-one messaging, live presence indicators (online/offline/last seen), read recei[...]',
     technologies: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Firebase', 'Firestore', 'Motion', 'Lucide React'],
     features: [
       'Sub-second real-time messaging driven by Firestore snapshot listeners',
@@ -156,7 +202,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'AI Agents',
     secondaryCategories: ['AI / ML'],
     description: 'Multi-agent career intelligence pipeline coordinating skill gap analysis, personalized roadmaps, resume auditing, and interview preparation.',
-    longDescription: 'Leverages LangGraph and Google Gemini to assemble a team of coordinated AI specialists. A master supervisor delegates tasks to dedicated sub-agents, each focused strictly on one aspect of professional development, culminating in a structured, actionable career strategy report.',
+    longDescription: 'Leverages LangGraph and Google Gemini to assemble a team of coordinated AI specialists. A master supervisor delegates tasks to dedicated sub-agents, each focused strictly on[...]',
     technologies: ['Python', 'LangGraph', 'LangChain', 'Google Gemini', 'Multi-Agent Architecture'],
     features: [
       'Dedicated multi-agent pipeline coordinated by a centralized Supervisor agent',
