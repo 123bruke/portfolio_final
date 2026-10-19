@@ -46,7 +46,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'AI Agents',
     secondaryCategories: ['Full-Stack', 'AI / ML'],
     description: 'Enterprise-scale AI-powered job matching platform leveraging intelligent agents for resume analysis, job recommendation, and candidate-employer alignment.',
-    longDescription: 'A comprehensive job portal combining AI agents, machine learning, and full-stack architecture to revolutionize job matching. Implements multi-agent orchestration for candidate skill analysis, job requirement parsing, intelligent matching algorithms, and real-time notifications. Features include recruiter dashboards, candidate portfolios, AI-driven recommendation engines, and interview scheduling automation.',
+    longDescription: 'A comprehensive job portal combining AI agents, machine learning, and full-stack architecture to revolutionize job matching. Implements multi-agent orchestration for candidat[...]',
     technologies: ['React 19', 'TypeScript', 'Python', 'LangGraph', 'FastAPI', 'Firebase', 'Tailwind CSS', 'Lucide React', 'LLMs', 'Vector Embeddings', 'Zustand'],
     features: [
       'Multi-agent AI orchestration for intelligent job matching and candidate ranking',
@@ -131,7 +131,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'Research',
     secondaryCategories: ['AI / ML'],
     description: 'Research-oriented engineering project integrating complex biomedical datasets into structured graph ontologies using BioCypher, Neo4j, and KGX workflows.',
-    longDescription: 'Focuses on the engineering challenges of biomedical knowledge representation. Combines heterogeneous data sources into a unified knowledge graph schema, mapping entities and [...]',
+    longDescription: 'Focuses on the engineering challenges of biomedical knowledge representation. Combines heterogeneous data sources into a unified knowledge graph schema, mapping entities and[...]',
     technologies: ['Python', 'BioCypher', 'Neo4j', 'Biomedical Data', 'Ontologies', 'KGX Workflows', 'MORK', 'Graph Algorithms'],
     features: [
       'Declarative schema mapping linking biomedical concepts with standard ontologies',
@@ -236,6 +236,28 @@ export const FEATURED_PROJECTS: Project[] = [
 ];
 
 export const MORE_PROJECTS: Project[] = [
+  {
+    id: 'gust-house-management',
+    title: 'Family Guest House Management System',
+    category: 'Full-Stack',
+    secondaryCategories: ['Backend'],
+    description: 'Internal web application for managing guest-house operations: rooms, guests, reservations, stays, payments, expenses, and financial reports.',
+    longDescription: 'A full-featured guest house management system with role-based staff sign-in (Super Admin, Admin, Receptionist), multi-currency payment tracking (ETB, USD), bilingual UI (English/Amharic), audit event logs, and deployment-friendly frontend/backend split (Vite frontend with FastAPI backend). Designed for small to medium guest-house operations to manage reservations, check-ins/outs, billing, and financial reporting.',
+    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Node.js', 'Vite', 'React', 'TypeScript', 'Tailwind CSS'],
+    features: [
+      'Manage rooms, guest records, and reservations with check-in/check-out support',
+      'Record payments in ETB and USD, tracking currencies separately',
+      'Record expenses and generate financial summaries and income details',
+      'Audit events for account and operational changes',
+      'Bilingual interface: English and Amharic, with light and dark themes',
+      'Role-based access: Super Admin, Admin, Receptionist with separate credentials and permissions',
+      'Local development instructions and production notes for Vercel / Render deployments included in README'
+    ],
+    architectureSummary: 'Vite React Frontend -> FastAPI Backend -> PostgreSQL Database with role-based auth and auditing',
+    githubUrl: 'https://github.com/123bruke/Gust_House_Management_System',
+    featured: false,
+    type: 'standard'
+  },
   {
     id: 'smart-ai-hospital',
     title: 'SMART AI Hospital',
