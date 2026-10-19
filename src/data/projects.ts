@@ -7,7 +7,7 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'AI Agents',
     secondaryCategories: ['AI / ML', 'Backend'],
     description: 'Production-oriented fully local AI agent platform built with LangGraph, LangChain, Ollama, ChromaDB, and FastAPI.',
-    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized[...]',
+    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized[...]
     technologies: ['Python', 'LangGraph', 'LangChain', 'Ollama', 'FastAPI', 'ChromaDB', 'LLMs', 'Vector Memory'],
     features: [
       'Fully local AI architecture executing on consumer hardware via Ollama',
@@ -85,6 +85,28 @@ export const FEATURED_PROJECTS: Project[] = [
     githubUrl: 'https://github.com/123bruke/Moseb_job_portal',
     featured: true,
     type: 'multi-agent'
+  },
+  {
+    id: 'gust-house-management',
+    title: 'Family Guest House Management System',
+    category: 'Full-Stack',
+    secondaryCategories: ['Backend'],
+    description: 'Internal web application for managing guest-house operations: rooms, guests, reservations, stays, payments, expenses, and financial reports.',
+    longDescription: 'A full-featured guest house management system with role-based staff sign-in (Super Admin, Admin, Receptionist), multi-currency payment tracking (ETB, USD), bilingual UI (English/Amharic), audit event logs, and deployment-friendly frontend/backend split (Vite frontend with FastAPI backend). Designed for small to medium guest-house operations to manage reservations, check-ins/outs, billing, and financial reporting.',
+    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Node.js', 'Vite', 'React', 'TypeScript', 'Tailwind CSS'],
+    features: [
+      'Manage rooms, guest records, and reservations with check-in/check-out support',
+      'Record payments in ETB and USD, tracking currencies separately',
+      'Record expenses and generate financial summaries and income details',
+      'Audit events for account and operational changes',
+      'Bilingual interface: English and Amharic, with light and dark themes',
+      'Role-based access: Super Admin, Admin, Receptionist with separate credentials and permissions',
+      'Local development instructions and production notes for Vercel / Render deployments included in README'
+    ],
+    architectureSummary: 'Vite React Frontend -> FastAPI Backend -> PostgreSQL Database with role-based auth and auditing',
+    githubUrl: 'https://github.com/123bruke/Gust_House_Management_System',
+    featured: true,
+    type: 'standard'
   },
   {
     id: 'icog-vendor-agent',
@@ -236,28 +258,6 @@ export const FEATURED_PROJECTS: Project[] = [
 ];
 
 export const MORE_PROJECTS: Project[] = [
-  {
-    id: 'gust-house-management',
-    title: 'Family Guest House Management System',
-    category: 'Full-Stack',
-    secondaryCategories: ['Backend'],
-    description: 'Internal web application for managing guest-house operations: rooms, guests, reservations, stays, payments, expenses, and financial reports.',
-    longDescription: 'A full-featured guest house management system with role-based staff sign-in (Super Admin, Admin, Receptionist), multi-currency payment tracking (ETB, USD), bilingual UI (English/Amharic), audit event logs, and deployment-friendly frontend/backend split (Vite frontend with FastAPI backend). Designed for small to medium guest-house operations to manage reservations, check-ins/outs, billing, and financial reporting.',
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Node.js', 'Vite', 'React', 'TypeScript', 'Tailwind CSS'],
-    features: [
-      'Manage rooms, guest records, and reservations with check-in/check-out support',
-      'Record payments in ETB and USD, tracking currencies separately',
-      'Record expenses and generate financial summaries and income details',
-      'Audit events for account and operational changes',
-      'Bilingual interface: English and Amharic, with light and dark themes',
-      'Role-based access: Super Admin, Admin, Receptionist with separate credentials and permissions',
-      'Local development instructions and production notes for Vercel / Render deployments included in README'
-    ],
-    architectureSummary: 'Vite React Frontend -> FastAPI Backend -> PostgreSQL Database with role-based auth and auditing',
-    githubUrl: 'https://github.com/123bruke/Gust_House_Management_System',
-    featured: false,
-    type: 'standard'
-  },
   {
     id: 'smart-ai-hospital',
     title: 'SMART AI Hospital',
