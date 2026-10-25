@@ -5,7 +5,6 @@ import About from './components/About';
 import JourneyTimeline from './components/JourneyTimeline';
 import SkillsSection from './components/SkillsSection';
 import FeaturedProjects from './components/FeaturedProjects';
-import AiEngineeringProcess from './components/AiEngineeringProcess';
 import FullStackArchitecture from './components/FullStackArchitecture';
 import ProblemSolver from './components/ProblemSolver';
 import ExperienceSection from './components/ExperienceSection';
@@ -51,9 +50,6 @@ function PortfolioApp() {
 
         {/* Featured Projects Bento Grid with Interactive Architecture & Search */}
         <FeaturedProjects onSelectProject={(p) => setSelectedProject(p)} />
-
-        {/* How I Build AI Systems (Methodology Grid) */}
-        <AiEngineeringProcess />
 
         {/* Full-Stack Layered Architecture Grid */}
         <FullStackArchitecture />
