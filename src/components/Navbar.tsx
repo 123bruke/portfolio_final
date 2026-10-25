@@ -171,7 +171,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors ${
                   activeSection === link.id
-                    ? 'text-emerald-950 bg-emerald-100 font-bold'
+                    ? 'text-black bg-zinc-100 font-bold'
                     : 'text-zinc-700 hover:bg-zinc-100'
                 }`}
               >
@@ -189,7 +189,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 }}
                 className="btn-secondary py-2 text-xs"
               >
-                <Terminal className="w-3.5 h-3.5 text-emerald-600" />
+                <Terminal className="w-3.5 h-3.5 text-black" />
                 <span>CLI</span>
               </button>
             )}
@@ -201,7 +201,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
               }}
               className="btn-secondary py-2 text-xs"
             >
-              <FileText className="w-3.5 h-3.5 text-emerald-600" />
+              <FileText className="w-3.5 h-3.5 text-black" />
               <span>Resume</span>
             </button>
 

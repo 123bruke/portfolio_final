@@ -73,19 +73,19 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-10 relative transition-colors duration-200">
+    <section id="contact" className="py-10 scroll-mt-24 relative transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionBorderFrame>
           {/* Section Header */}
           <div className="max-w-3xl mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 text-xs font-mono text-emerald-800 dark:text-cyan-300 font-bold mb-3 shadow-xs">
-              <Terminal className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-300 text-xs font-mono text-black font-bold mb-3 shadow-2xs">
+              <Terminal className="w-3.5 h-3.5 text-black" />
               <span>09 // CONNECT</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gradient-title">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-black">
               Let's Build Something Intelligent
             </h2>
-            <p className="mt-2 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+            <p className="mt-2 text-sm sm:text-base text-zinc-700 leading-relaxed font-normal">
               I am open to software engineering opportunities, AI projects, full-stack collaborations, and technically challenging problems.
             </p>
           </div>
@@ -99,14 +99,14 @@ export default function ContactSection() {
               <div className="bento-card p-5">
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400">
-                      <Mail className="w-4 h-4" />
+                    <div className="p-2 rounded-lg bg-zinc-100 border border-zinc-200 text-black">
+                      <Mail className="w-4 h-4 text-black" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-mono text-zinc-500">EMAIL ADDRESS</div>
+                      <div className="text-[11px] font-mono text-zinc-600 font-bold">EMAIL ADDRESS</div>
                       <a
                         href={`mailto:${PERSONAL_INFO.email}`}
-                        className="text-xs sm:text-sm font-bold text-zinc-950 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 font-mono"
+                        className="text-xs sm:text-sm font-bold text-black hover:text-zinc-700 font-mono"
                       >
                         {PERSONAL_INFO.email}
                       </a>
@@ -118,7 +118,7 @@ export default function ContactSection() {
                     className="btn-secondary px-2.5 py-1 text-xs"
                     title="Copy Email"
                   >
-                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedEmail ? <Check className="w-3.5 h-3.5 text-black" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
                   </button>
                 </div>
@@ -128,14 +128,14 @@ export default function ContactSection() {
               <div className="bento-card p-5">
                 <div className="flex items-center justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400">
-                      <Phone className="w-4 h-4" />
+                    <div className="p-2 rounded-lg bg-zinc-100 border border-zinc-200 text-black">
+                      <Phone className="w-4 h-4 text-black" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-mono text-zinc-500">DIRECT PHONE</div>
+                      <div className="text-[11px] font-mono text-zinc-600 font-bold">DIRECT PHONE</div>
                       <a
                         href={`tel:${PERSONAL_INFO.phone}`}
-                        className="text-xs sm:text-sm font-bold text-zinc-950 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 font-mono"
+                        className="text-xs sm:text-sm font-bold text-black hover:text-zinc-700 font-mono"
                       >
                         {PERSONAL_INFO.phone}
                       </a>
@@ -147,7 +147,7 @@ export default function ContactSection() {
                     className="btn-secondary px-2.5 py-1 text-xs"
                     title="Copy Phone"
                   >
-                    {copiedPhone ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copiedPhone ? <Check className="w-3.5 h-3.5 text-black" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copiedPhone ? 'Copied' : 'Copy'}</span>
                   </button>
                 </div>
@@ -155,7 +155,7 @@ export default function ContactSection() {
 
               {/* Social & Coding Profiles Bento Grid */}
               <div className="bento-card p-5 space-y-3">
-                <div className="text-xs font-mono uppercase text-zinc-500 font-semibold pb-2 border-b border-zinc-200 dark:border-zinc-800">
+                <div className="text-xs font-mono uppercase text-black font-bold pb-2 border-b border-zinc-200">
                   Verified Engineering Profiles
                 </div>
 
@@ -164,9 +164,9 @@ export default function ContactSection() {
                     href={PERSONAL_INFO.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary p-2.5 justify-start text-xs"
+                    className="btn-secondary p-2.5 justify-start text-xs font-bold"
                   >
-                    <Github className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <Github className="w-4 h-4 text-black" />
                     <span>GitHub</span>
                   </a>
 
@@ -174,9 +174,9 @@ export default function ContactSection() {
                     href={PERSONAL_INFO.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary p-2.5 justify-start text-xs"
+                    className="btn-secondary p-2.5 justify-start text-xs font-bold"
                   >
-                    <Linkedin className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <Linkedin className="w-4 h-4 text-black" />
                     <span>LinkedIn</span>
                   </a>
 
@@ -184,9 +184,9 @@ export default function ContactSection() {
                     href={PERSONAL_INFO.leetcode}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary p-2.5 justify-start text-xs"
+                    className="btn-secondary p-2.5 justify-start text-xs font-bold"
                   >
-                    <Code2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <Code2 className="w-4 h-4 text-black" />
                     <span>LeetCode</span>
                   </a>
 
@@ -194,9 +194,9 @@ export default function ContactSection() {
                     href={PERSONAL_INFO.kaggle}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary p-2.5 justify-start text-xs"
+                    className="btn-secondary p-2.5 justify-start text-xs font-bold"
                   >
-                    <Binary className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                    <Binary className="w-4 h-4 text-black" />
                     <span>Kaggle</span>
                   </a>
                 </div>
@@ -207,22 +207,22 @@ export default function ContactSection() {
             {/* Right Column: Verified Contact Form (7 cols) */}
             <div className="lg:col-span-7">
               <div className="bento-card p-6 sm:p-8">
-                <h3 className="text-lg sm:text-xl font-extrabold text-zinc-950 dark:text-white tracking-tight mb-1.5">
+                <h3 className="text-lg sm:text-xl font-extrabold text-black tracking-tight mb-1.5">
                   Send a Direct Message
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-6 font-normal">
+                <p className="text-xs sm:text-sm text-zinc-700 mb-6 font-normal">
                   Fill in the details below to transmit a project inquiry, internship offer, or technical question.
                 </p>
 
                 {isSubmitted && (
-                  <div className="mb-6 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 flex items-start gap-3">
-                    <Check className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                  <div className="mb-6 p-4 rounded-xl bg-zinc-100 border border-zinc-300 flex items-start gap-3">
+                    <Check className="w-5 h-5 text-black shrink-0 mt-0.5" />
                     <div>
-                      <div className="text-sm font-bold text-emerald-900 dark:text-emerald-300">
+                      <div className="text-sm font-bold text-black">
                         Email Client Prepared
                       </div>
-                      <div className="text-xs text-zinc-700 dark:text-zinc-300 mt-1">
-                        Your message has been formatted. If your email client didn't open automatically, write directly to <span className="font-mono text-emerald-700 dark:text-emerald-300 font-bold">{PERSONAL_INFO.email}</span>.
+                      <div className="text-xs text-zinc-800 mt-1">
+                        Your message has been formatted. If your email client didn't open automatically, write directly to <span className="font-mono text-black font-bold">{PERSONAL_INFO.email}</span>.
                       </div>
                     </div>
                   </div>
@@ -234,7 +234,7 @@ export default function ContactSection() {
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="block text-xs font-mono uppercase text-zinc-800 dark:text-zinc-200 font-semibold mb-1.5"
+                        className="block text-xs font-mono uppercase text-black font-bold mb-1.5"
                       >
                         Your Name *
                       </label>
@@ -244,14 +244,14 @@ export default function ContactSection() {
                         placeholder="e.g. Alex Chen"
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border text-sm text-zinc-950 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 transition-all ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-white border text-sm text-black placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all ${
                           errors.name
                             ? 'border-red-500 focus:ring-red-400'
-                            : 'border-zinc-300 dark:border-zinc-700 focus:border-emerald-500'
+                            : 'border-zinc-300 focus:border-black'
                         }`}
                       />
                       {errors.name && (
-                        <span className="text-[11px] text-red-500 mt-1 flex items-center gap-1">
+                        <span className="text-[11px] text-red-600 mt-1 flex items-center gap-1 font-semibold">
                           <AlertCircle className="w-3 h-3" />
                           {errors.name}
                         </span>
@@ -262,7 +262,7 @@ export default function ContactSection() {
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="block text-xs font-mono uppercase text-zinc-800 dark:text-zinc-200 font-semibold mb-1.5"
+                        className="block text-xs font-mono uppercase text-black font-bold mb-1.5"
                       >
                         Your Email *
                       </label>
@@ -272,14 +272,14 @@ export default function ContactSection() {
                         placeholder="e.g. alex@company.com"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border text-sm text-zinc-950 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 transition-all ${
+                        className={`w-full px-3.5 py-2.5 rounded-xl bg-white border text-sm text-black placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all ${
                           errors.email
                             ? 'border-red-500 focus:ring-red-400'
-                            : 'border-zinc-300 dark:border-zinc-700 focus:border-emerald-500'
+                            : 'border-zinc-300 focus:border-black'
                         }`}
                       />
                       {errors.email && (
-                        <span className="text-[11px] text-red-500 mt-1 flex items-center gap-1">
+                        <span className="text-[11px] text-red-600 mt-1 flex items-center gap-1 font-semibold">
                           <AlertCircle className="w-3 h-3" />
                           {errors.email}
                         </span>
@@ -291,7 +291,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="contact-subject"
-                      className="block text-xs font-mono uppercase text-zinc-800 dark:text-zinc-200 font-semibold mb-1.5"
+                      className="block text-xs font-mono uppercase text-black font-bold mb-1.5"
                     >
                       Subject *
                     </label>
@@ -301,14 +301,14 @@ export default function ContactSection() {
                       placeholder="e.g. AI Engineering Role / Full-Stack Project"
                       value={formState.subject}
                       onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border text-sm text-zinc-950 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 transition-all ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white border text-sm text-black placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all ${
                         errors.subject
                           ? 'border-red-500 focus:ring-red-400'
-                          : 'border-zinc-300 dark:border-zinc-700 focus:border-emerald-500'
+                          : 'border-zinc-300 focus:border-black'
                       }`}
                     />
                     {errors.subject && (
-                      <span className="text-[11px] text-red-500 mt-1 flex items-center gap-1">
+                      <span className="text-[11px] text-red-600 mt-1 flex items-center gap-1 font-semibold">
                         <AlertCircle className="w-3 h-3" />
                         {errors.subject}
                       </span>
@@ -319,7 +319,7 @@ export default function ContactSection() {
                   <div>
                     <label
                       htmlFor="contact-message"
-                      className="block text-xs font-mono uppercase text-zinc-800 dark:text-zinc-200 font-semibold mb-1.5"
+                      className="block text-xs font-mono uppercase text-black font-bold mb-1.5"
                     >
                       Message *
                     </label>
@@ -329,14 +329,14 @@ export default function ContactSection() {
                       placeholder="Describe the opportunity, technical challenge, or project scope..."
                       value={formState.message}
                       onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-zinc-900 border text-sm text-zinc-950 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-400/50 transition-all ${
+                      className={`w-full px-3.5 py-2.5 rounded-xl bg-white border text-sm text-black placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-black/10 transition-all ${
                         errors.message
                           ? 'border-red-500 focus:ring-red-400'
-                          : 'border-zinc-300 dark:border-zinc-700 focus:border-emerald-500'
+                          : 'border-zinc-300 focus:border-black'
                       }`}
                     />
                     {errors.message && (
-                      <span className="text-[11px] text-red-500 mt-1 flex items-center gap-1">
+                      <span className="text-[11px] text-red-600 mt-1 flex items-center gap-1 font-semibold">
                         <AlertCircle className="w-3 h-3" />
                         {errors.message}
                       </span>

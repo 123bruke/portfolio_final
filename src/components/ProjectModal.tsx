@@ -40,17 +40,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     >
       <div
         id="project-detail-modal-content"
-        className="relative w-full max-w-3xl rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-6 sm:p-8 shadow-2xl my-8 overflow-hidden text-left"
+        className="relative w-full max-w-3xl rounded-2xl bg-white border border-zinc-300 p-6 sm:p-8 shadow-2xl my-8 overflow-hidden text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-start justify-between gap-4 pb-4 border-b border-zinc-200 dark:border-zinc-800">
+        <div className="flex items-start justify-between gap-4 pb-4 border-b border-zinc-200">
           <div>
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 text-xs font-mono text-emerald-800 dark:text-emerald-300 font-bold mb-2">
-              <Cpu className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-zinc-100 border border-zinc-300 text-xs font-mono text-black font-bold mb-2">
+              <Cpu className="w-3.5 h-3.5 text-black" />
               <span>{project.category}</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl font-black text-black tracking-tight">
               {project.title}
             </h2>
           </div>
@@ -58,9 +58,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="btn-secondary p-2 rounded-xl shrink-0 cursor-pointer"
+            className="btn-secondary p-2 rounded-xl shrink-0 cursor-pointer text-black hover:text-black"
           >
-            <X className="w-4 h-4" />
+            <X className="w-4 h-4 text-black" />
           </button>
         </div>
 
@@ -68,24 +68,24 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="py-5 space-y-5 max-h-[70vh] overflow-y-auto pr-1">
           {/* Summary / Description */}
           <div>
-            <h3 className="text-xs font-mono uppercase text-emerald-800 dark:text-emerald-400 font-bold tracking-wider mb-1.5">
+            <h3 className="text-xs font-mono uppercase text-black font-extrabold tracking-wider mb-1.5">
               System Overview
             </h3>
-            <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+            <p className="text-sm text-zinc-900 leading-relaxed font-normal">
               {project.longDescription || project.description}
             </p>
           </div>
 
           {/* Test Metric Highlight if available */}
           {project.testMetric && (
-            <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-500/40 flex items-center justify-between">
+            <div className="p-3.5 rounded-xl bg-zinc-100 border border-zinc-300 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-emerald-900 dark:text-emerald-300">
+                <ShieldCheck className="w-5 h-5 text-black shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-black">
                   {project.testMetric}
                 </span>
               </div>
-              <span className="text-[10px] font-mono uppercase text-emerald-800 dark:text-emerald-300 px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900/40 font-bold">
+              <span className="text-[10px] font-mono uppercase text-white bg-black px-2.5 py-0.5 rounded font-bold">
                 Verified
               </span>
             </div>
@@ -93,7 +93,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Architectural Diagram */}
           <div>
-            <h3 className="text-xs font-mono uppercase text-emerald-800 dark:text-emerald-400 font-bold tracking-wider mb-2">
+            <h3 className="text-xs font-mono uppercase text-black font-extrabold tracking-wider mb-2">
               System Architecture & Flow
             </h3>
             <ProjectDiagram project={project} />
@@ -101,13 +101,13 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Key Engineering Features */}
           <div>
-            <h3 className="text-xs font-mono uppercase text-emerald-800 dark:text-emerald-400 font-bold tracking-wider mb-2">
+            <h3 className="text-xs font-mono uppercase text-black font-extrabold tracking-wider mb-2">
               Engineering Features & Capabilities
             </h3>
             <div className="space-y-1.5">
               {project.features.map((feature, idx) => (
-                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 font-normal">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-900 font-normal">
+                  <CheckCircle2 className="w-4 h-4 text-black shrink-0 mt-0.5" />
                   <span>{feature}</span>
                 </div>
               ))}
@@ -116,14 +116,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Technologies Used */}
           <div>
-            <h3 className="text-xs font-mono uppercase text-emerald-800 dark:text-emerald-400 font-bold tracking-wider mb-2">
+            <h3 className="text-xs font-mono uppercase text-black font-extrabold tracking-wider mb-2">
               Technologies & Frameworks
             </h3>
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md text-xs font-mono bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 font-semibold"
+                  className="px-2.5 py-1 rounded-md text-xs font-mono bg-zinc-100 border border-zinc-300 text-black font-bold"
                 >
                   {tech}
                 </span>
@@ -133,7 +133,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         </div>
 
         {/* Modal Footer / External Actions */}
-        <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center justify-between gap-3">
+        <div className="pt-4 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <a
               href={project.githubUrl}
@@ -141,9 +141,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               rel="noopener noreferrer"
               className="btn-primary"
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4 text-white" />
               <span>Explore GitHub Repository</span>
-              <ExternalLink className="w-3.5 h-3.5" />
+              <ExternalLink className="w-3.5 h-3.5 text-white" />
             </a>
 
             {project.liveUrl && (
@@ -154,7 +154,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="btn-secondary"
               >
                 <span>Live Application</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <ExternalLink className="w-3.5 h-3.5 text-black" />
               </a>
             )}
           </div>

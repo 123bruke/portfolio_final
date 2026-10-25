@@ -72,21 +72,21 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
   }, [activeFilter, searchQuery]);
 
   return (
-    <section id="projects" className="py-10 relative transition-colors duration-200">
+    <section id="projects" className="py-10 scroll-mt-24 relative transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionBorderFrame>
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 text-xs font-mono text-emerald-800 dark:text-cyan-300 font-bold mb-3 shadow-xs">
-                <Terminal className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-100 border border-zinc-300 text-xs font-mono text-black font-bold mb-3 shadow-2xs">
+                <Terminal className="w-3.5 h-3.5 text-black" />
                 <span>04 // SYSTEM IMPLEMENTATIONS</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-gradient-title">
+              <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-black">
                 Featured Engineering Projects
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 max-w-xl font-normal">
-                Autonomous AI agent workflows, biomedical knowledge graphs, production full-stack systems, and simulations.
+              <p className="mt-2 text-sm sm:text-base text-zinc-700 max-w-xl font-normal">
+                Autonomous AI agent workflows, multimodal vision RAG, biomedical knowledge graphs, and production systems.
               </p>
             </div>
 
@@ -94,10 +94,10 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
               href="https://github.com/123bruke"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-bold self-start md:self-auto"
+              className="inline-flex items-center gap-2 text-xs font-mono text-black hover:underline font-bold self-start md:self-auto"
             >
               <span>Explore GitHub Repositories</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-black" />
             </a>
           </div>
 
@@ -130,20 +130,20 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
               })}
             </div>
 
-            {/* Instant Project Search Input (New Feature) */}
+            {/* Instant Project Search Input */}
             <div className="relative min-w-[220px] sm:w-64">
-              <Search className="w-4 h-4 text-zinc-400 absolute left-3 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 placeholder="Search projects by tech/title..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-8 py-1.5 text-xs rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                className="w-full pl-9 pr-8 py-1.5 text-xs rounded-xl bg-white border border-zinc-300 text-zinc-950 placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-black focus:border-black"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-black"
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
@@ -166,17 +166,17 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                     <div>
                       {/* Category & Index Meta */}
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs font-mono text-emerald-700 dark:text-emerald-400 font-bold">
+                        <span className="text-xs font-mono text-black font-bold">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 text-[11px] font-mono text-emerald-800 dark:text-cyan-300 font-bold">
+                        <span className="w-1.5 h-1.5 rounded-full bg-black" />
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-zinc-100 border border-zinc-300 text-[11px] font-mono text-zinc-950 font-bold">
                           {project.category}
                         </span>
                         {project.secondaryCategories.slice(0, 1).map((sec) => (
                           <span
                             key={sec}
-                            className="text-[11px] font-mono text-zinc-700 dark:text-zinc-300 px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 font-medium"
+                            className="text-[11px] font-mono text-zinc-800 px-2 py-0.5 rounded bg-zinc-100 border border-zinc-300 font-medium"
                           >
                             {sec}
                           </span>
@@ -184,19 +184,19 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white tracking-tight mb-2.5">
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-black tracking-tight mb-2.5">
                         {project.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4 font-normal">
+                      <p className="text-xs sm:text-sm text-zinc-800 leading-relaxed mb-4 font-normal">
                         {project.description}
                       </p>
 
                       {/* Test Metric Highlight if available */}
                       {project.testMetric && (
-                        <div className="mb-4 p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-500/40 flex items-center gap-2 text-xs text-emerald-900 dark:text-emerald-300 font-medium">
-                          <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <div className="mb-4 p-2.5 rounded-lg bg-zinc-100 border border-zinc-300 flex items-center gap-2 text-xs text-zinc-950 font-semibold">
+                          <ShieldCheck className="w-4 h-4 text-black shrink-0" />
                           <span>{project.testMetric}</span>
                         </div>
                       )}
@@ -204,8 +204,8 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                       {/* Key Features Bullet Points */}
                       <div className="space-y-1.5 mb-5">
                         {project.features.slice(0, 3).map((feature, fIdx) => (
-                          <div key={fIdx} className="flex items-start gap-2 text-xs text-zinc-700 dark:text-zinc-300 font-normal">
-                            <ChevronRight className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                          <div key={fIdx} className="flex items-start gap-2 text-xs text-zinc-800 font-normal">
+                            <ChevronRight className="w-3.5 h-3.5 text-black shrink-0 mt-0.5" />
                             <span>{feature}</span>
                           </div>
                         ))}
@@ -216,7 +216,7 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 font-medium"
+                            className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-zinc-100 border border-zinc-300 text-zinc-950 font-semibold"
                           >
                             {tech}
                           </span>
@@ -225,7 +225,7 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-wrap items-center gap-3">
+                    <div className="pt-4 border-t border-zinc-200 flex flex-wrap items-center gap-3">
                       <a
                         href={project.githubUrl}
                         target="_blank"
@@ -241,7 +241,7 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                         onClick={() => onSelectProject(project)}
                         className="btn-secondary"
                       >
-                        <Maximize2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                        <Maximize2 className="w-3.5 h-3.5 text-black" />
                         <span>Inspect Architecture</span>
                       </button>
 
@@ -270,19 +270,19 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
           </div>
 
           {filteredFeatured.length === 0 && (
-            <div className="text-center py-12 text-zinc-500 text-sm">
-              No projects found matching "<span className="font-bold text-zinc-800 dark:text-zinc-200">{searchQuery}</span>". Click clear to view all projects.
+            <div className="text-center py-12 text-zinc-600 text-sm">
+              No projects found matching "<span className="font-bold text-black">{searchQuery}</span>". Click clear to view all projects.
             </div>
           )}
 
           {/* Expandable Additional Projects Section */}
-          <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-zinc-800">
+          <div className="mt-12 pt-8 border-t border-zinc-200">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="text-lg sm:text-xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
+                <h3 className="text-lg sm:text-xl font-extrabold text-black tracking-tight">
                   Additional Engineering Projects
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
+                <p className="text-xs sm:text-sm text-zinc-700 mt-0.5">
                   Computer vision tools, student portals, and regional AI utilities.
                 </p>
               </div>
@@ -305,25 +305,25 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-2.5">
-                        <span className="text-[11px] font-mono text-emerald-800 dark:text-cyan-300 px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/30 font-bold">
+                        <span className="text-[11px] font-mono text-zinc-950 px-2 py-0.5 rounded bg-zinc-100 border border-zinc-300 font-bold">
                           {project.category}
                         </span>
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 p-1"
+                          className="text-zinc-600 hover:text-black p-1"
                           aria-label="GitHub repo"
                         >
                           <Github className="w-4 h-4" />
                         </a>
                       </div>
 
-                      <h4 className="text-base font-extrabold text-zinc-950 dark:text-white mb-2 tracking-tight">
+                      <h4 className="text-base font-extrabold text-black mb-2 tracking-tight">
                         {project.title}
                       </h4>
 
-                      <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4 font-normal">
+                      <p className="text-xs text-zinc-800 leading-relaxed mb-4 font-normal">
                         {project.description}
                       </p>
 
@@ -331,7 +331,7 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                         {project.technologies.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300"
+                            className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 border border-zinc-300 text-zinc-900 font-semibold"
                           >
                             {tech}
                           </span>
@@ -339,10 +339,10 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                       </div>
                     </div>
 
-                    <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+                    <div className="pt-3 border-t border-zinc-200 flex items-center justify-between">
                       <button
                         onClick={() => onSelectProject(project)}
-                        className="text-xs font-mono text-emerald-700 dark:text-emerald-400 hover:underline font-bold inline-flex items-center gap-1 cursor-pointer"
+                        className="text-xs font-mono text-black hover:underline font-bold inline-flex items-center gap-1 cursor-pointer"
                       >
                         <span>Details</span>
                         <ArrowUpRight className="w-3 h-3" />
@@ -352,7 +352,7 @@ export default function FeaturedProjects({ onSelectProject }: FeaturedProjectsPr
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400 font-medium"
+                        className="text-xs text-zinc-700 hover:text-black font-semibold"
                       >
                         Source Code
                       </a>

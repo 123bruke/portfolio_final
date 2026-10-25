@@ -62,22 +62,22 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
       {/* Realistic PDF Reader Toolbar */}
       <div
         id="resume-modal-toolbar"
-        className="w-full bg-zinc-950 border-b border-white/10 px-4 sm:px-6 py-2.5 flex items-center justify-between z-10 shadow-lg text-slate-200"
+        className="w-full bg-zinc-950 border-b border-zinc-800 px-4 sm:px-6 py-2.5 flex items-center justify-between z-10 shadow-lg text-white"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left: Document Info */}
         <div className="flex items-center gap-3">
-          <div className="p-1.5 rounded bg-emerald-500/20 text-emerald-400">
+          <div className="p-1.5 rounded bg-zinc-800 text-white">
             <FileText className="w-4 h-4" />
           </div>
           <div>
             <div className="text-xs sm:text-sm font-medium text-white flex items-center gap-2">
               <span>Biruk_Ahmye_Resume.pdf</span>
-              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] bg-zinc-800 text-slate-300 font-mono">
+              <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] bg-zinc-800 text-zinc-300 font-mono">
                 1 / 1
               </span>
             </div>
-            <div className="text-[10px] text-slate-400 font-mono hidden sm:block">
+            <div className="text-[10px] text-zinc-400 font-mono hidden sm:block">
               PDF Document • Standard A4 Format
             </div>
           </div>
@@ -88,18 +88,18 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <button
             type="button"
             onClick={handleZoomOut}
-            className="p-1 text-slate-300 hover:text-white hover:bg-zinc-800 rounded transition-colors"
+            className="p-1 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded transition-colors"
             title="Zoom Out"
           >
             <ZoomOut className="w-3.5 h-3.5" />
           </button>
-          <span className="text-xs font-mono text-emerald-400 px-2 min-w-[3rem] text-center">
+          <span className="text-xs font-mono text-white px-2 min-w-[3rem] text-center font-bold">
             {zoomLevel}%
           </span>
           <button
             type="button"
             onClick={handleZoomIn}
-            className="p-1 text-slate-300 hover:text-white hover:bg-zinc-800 rounded transition-colors"
+            className="p-1 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded transition-colors"
             title="Zoom In"
           >
             <ZoomIn className="w-3.5 h-3.5" />
@@ -107,7 +107,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <button
             type="button"
             onClick={handleResetZoom}
-            className="p-1 text-slate-400 hover:text-slate-200 rounded transition-colors ml-1"
+            className="p-1 text-zinc-400 hover:text-white rounded transition-colors ml-1"
             title="Reset Zoom"
           >
             <RotateCcw className="w-3 h-3" />
@@ -119,28 +119,28 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           <button
             type="button"
             onClick={handlePrint}
-            className="btn-primary py-1.5 px-3 text-xs"
+            className="btn-primary py-1.5 px-3 text-xs bg-white text-black hover:bg-zinc-200 border-white"
             title="Print or Save as PDF"
           >
-            <Printer className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Print / Save PDF</span>
-            <span className="sm:hidden">Print</span>
+            <Printer className="w-3.5 h-3.5 text-black" />
+            <span className="hidden sm:inline font-bold">Print / Save PDF</span>
+            <span className="sm:hidden font-bold">Print</span>
           </button>
 
           <button
             type="button"
             onClick={handlePrint}
-            className="btn-secondary py-1.5 px-3 text-xs"
+            className="btn-secondary py-1.5 px-3 text-xs bg-zinc-900 text-white border-zinc-700 hover:bg-zinc-800"
             title="Download PDF"
           >
-            <Download className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="hidden sm:inline">Download</span>
+            <Download className="w-3.5 h-3.5 text-white" />
+            <span className="hidden sm:inline font-bold">Download</span>
           </button>
 
           <button
             type="button"
             onClick={onClose}
-            className="btn-secondary p-1.5 ml-1"
+            className="p-1.5 ml-1 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors"
             aria-label="Close resume modal"
           >
             <X className="w-4 h-4" />
@@ -160,8 +160,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           style={{ transform: `scale(${zoomLevel / 100})` }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Top Decorative Emerald/Green Strip */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-600 via-emerald-500 to-black" />
+          {/* Top Decorative Solid Black Strip */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-black" />
 
           {/* Header Section */}
           <div className="border-b-2 border-black pb-5 mb-6">
@@ -170,13 +170,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <h1 className="text-3xl sm:text-4xl font-black text-black tracking-tight font-serif uppercase">
                   {PERSONAL_INFO.name}
                 </h1>
-                <p className="text-xs sm:text-sm font-bold text-emerald-700 tracking-wider uppercase mt-1">
+                <p className="text-xs sm:text-sm font-black text-black tracking-wider uppercase mt-1">
                   Full-Stack Developer • AI/ML Engineer
                 </p>
               </div>
               <div className="text-[11px] text-black text-left sm:text-right font-medium space-y-0.5">
                 <div>Addis Ababa / Adama, Ethiopia</div>
-                <div className="font-mono text-emerald-700 font-semibold">{PERSONAL_INFO.email}</div>
+                <div className="font-mono text-black font-bold">{PERSONAL_INFO.email}</div>
                 <div>{PERSONAL_INFO.phone}</div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:text-emerald-700"
+                className="flex items-center gap-1 hover:underline font-bold"
               >
                 <Github className="w-3 h-3 text-black" />
                 github.com/123bruke
@@ -196,12 +196,12 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:text-emerald-700"
+                className="flex items-center gap-1 hover:underline font-bold"
               >
-                <Linkedin className="w-3 h-3 text-emerald-700" />
+                <Linkedin className="w-3 h-3 text-black" />
                 linkedin.com/in/biruk-ahmye
               </a>
-              <span className="flex items-center gap-1 text-black">
+              <span className="flex items-center gap-1 text-black font-semibold">
                 <GraduationCap className="w-3 h-3 text-black" />
                 ASTU Engineering (2024 — 2028)
               </span>
@@ -210,19 +210,19 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Professional Summary */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Professional Summary
             </h2>
             <p className="text-xs leading-relaxed text-black">
-              Results-driven Engineering student at <strong>Adama Science and Technology University (ASTU, 2024 — 2028)</strong> specializing in full-stack web architectures, practical machine learning systems, and intelligent AI agents. Proven expertise in multi-agent orchestration, vector databases, and production-grade AI workflows. Combining academic rigor with hands-on engineering to solve complex problems.
+              Results-driven Engineering student at <strong>Adama Science and Technology University (ASTU, 2024 — 2028)</strong> specializing in full-stack web architectures, practical machine learning systems, and intelligent AI agents. Proven expertise in multi-agent orchestration, vector databases, vision-based RAG architectures, and production-grade AI workflows. Combining academic rigor with hands-on engineering to solve complex problems.
             </p>
           </div>
 
           {/* Education */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Education
             </h2>
             <div className="flex justify-between items-baseline">
@@ -245,8 +245,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Technical Skills */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Technical Core Competencies
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-4 text-xs text-black">
@@ -254,7 +254,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <strong className="text-black">Languages:</strong> Python, TypeScript, JavaScript (ES6+), C++, SQL, HTML5/CSS3
               </div>
               <div>
-                <strong className="text-black">AI / ML:</strong> PyTorch, Scikit-Learn, LangChain, LangGraph, ChromaDB, Hugging Face
+                <strong className="text-black">AI / ML:</strong> PyTorch, Scikit-Learn, LangChain, LangGraph, ChromaDB, Hugging Face, ColPali
               </div>
               <div>
                 <strong className="text-black">Frontend:</strong> React 18, Next.js, Tailwind CSS, Responsive Design, State Management
@@ -273,19 +273,33 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Key Projects */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-3 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-3 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Featured Technical Projects
             </h2>
 
             <div className="space-y-3.5">
+              {/* VisionRAG */}
+              <div>
+                <div className="flex justify-between items-baseline">
+                  <h3 className="text-xs font-bold text-black">
+                    VisionRAG — Multimodal Document Retrieval & Voice QA
+                  </h3>
+                  <span className="text-[10px] font-mono text-black font-semibold">ColPali • Multimodal AI • FastAPI • React</span>
+                </div>
+                <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
+                  <li>Engineered vision-first document ingestion indexing complex charts, tables, and handwritten diagrams.</li>
+                  <li>Integrated visual grounding with bounding box citations and sub-second voice synthesis answering.</li>
+                </ul>
+              </div>
+
               {/* Project 1 */}
               <div>
                 <div className="flex justify-between items-baseline">
                   <h3 className="text-xs font-bold text-black">
                     Autonomous Vendor Evaluation System
                   </h3>
-                  <span className="text-[10px] font-mono text-black">LangGraph • ChromaDB • Python • FastAPI</span>
+                  <span className="text-[10px] font-mono text-black font-semibold">LangGraph • ChromaDB • Python • FastAPI</span>
                 </div>
                 <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Built stateful multi-agent system coordinating automated vendor risk evaluation and audit reports.</li>
@@ -299,7 +313,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <h3 className="text-xs font-bold text-black">
                     Biomedical Knowledge Graph Engineering
                   </h3>
-                  <span className="text-[10px] font-mono text-black">BioCypher • Neo4j • Python • Ontologies</span>
+                  <span className="text-[10px] font-mono text-black font-semibold">BioCypher • Neo4j • Python • Ontologies</span>
                 </div>
                 <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Architected biomedical data pipelines harmonizing gene, disease, and compound knowledge representations.</li>
@@ -313,11 +327,11 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <h3 className="text-xs font-bold text-black">
                     Full-Stack Interactive 3D & AI Web Application
                   </h3>
-                  <span className="text-[10px] font-mono text-black">React • TypeScript • Tailwind CSS • Three.js</span>
+                  <span className="text-[10px] font-mono text-black font-semibold">React • TypeScript • Tailwind CSS • Three.js</span>
                 </div>
                 <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
                   <li>Designed responsive, high-performance web applications with 3D canvas rendering and interactive states.</li>
-                  <li>Delivered modular, accessible UI components with full support for light and night color themes.</li>
+                  <li>Delivered modular, accessible UI components with pure high-contrast monochrome design system.</li>
                 </ul>
               </div>
             </div>
@@ -325,8 +339,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Practical Experience & Leadership */}
           <div className="mb-6">
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Experience & Academic Practice
             </h2>
 
@@ -336,7 +350,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                   <h3 className="text-xs font-bold text-black">
                     AI Engineering & Research Intern — iCog Labs
                   </h3>
-                  <span className="text-[10px] font-mono text-black">Internship / Research</span>
+                  <span className="text-[10px] font-mono text-black font-semibold">Internship / Research</span>
                 </div>
                 <p className="text-[11px] font-medium text-black">Addis Ababa, ET</p>
                 <ul className="list-disc list-outside ml-4 mt-1 text-[11px] text-black space-y-0.5">
@@ -350,8 +364,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
           {/* Certifications & Competitions */}
           <div>
-            <h2 className="text-xs font-extrabold uppercase tracking-widest text-black pb-1 border-b border-black/20 mb-2 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
+            <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 bg-black rounded-full" />
               Problem Solving Profiles
             </h2>
             <div className="flex flex-wrap items-center justify-between text-xs text-black gap-2">
@@ -365,7 +379,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
 
           {/* Footer of the White Paper */}
-          <div className="mt-8 pt-3 border-t border-black/20 text-center text-[10px] text-black/60 font-mono flex items-center justify-between">
+          <div className="mt-8 pt-3 border-t border-black/20 text-center text-[10px] text-black font-mono flex items-center justify-between">
             <span>Biruk Ahmye — Technical Curriculum Vitae</span>
             <span>References and verification available upon request</span>
           </div>
