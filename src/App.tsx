@@ -24,7 +24,7 @@ function PortfolioApp() {
 
   return (
     <div
-      className="min-h-screen relative bg-[#f8fafc] text-zinc-900 bg-clean-grid-light flex flex-col selection:bg-emerald-500/25 selection:text-emerald-700 transition-colors duration-200 overflow-x-hidden"
+      className="min-h-screen relative bg-[#fafafa] text-black bg-clean-grid-light flex flex-col selection:bg-black selection:text-white transition-colors duration-200 overflow-x-hidden"
     >
       {/* Sticky Clean Navbar */}
       <Navbar 
