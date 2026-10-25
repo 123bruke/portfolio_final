@@ -170,7 +170,7 @@ export default function ExperienceSection() {
                   <div className="p-3 rounded-xl bg-zinc-50 border border-zinc-200 space-y-1.5">
                     <div className="text-[11px] font-mono uppercase text-emerald-800 font-bold flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
-                      Key Coursework Focus
+                      Key Coursework
                     </div>
                     <div className="text-xs text-zinc-800 space-y-1 font-medium">
                       <div>• Data Structures & Algorithms Analysis</div>
