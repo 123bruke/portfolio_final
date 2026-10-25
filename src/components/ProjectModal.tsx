@@ -46,8 +46,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         {/* Modal Header */}
         <div className="flex items-start justify-between gap-4 pb-4 border-b border-zinc-200">
           <div>
-            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-zinc-100 border border-zinc-300 text-xs font-mono text-black font-bold mb-2">
-              <Cpu className="w-3.5 h-3.5 text-black" />
+            <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-md bg-emerald-50 border border-emerald-300 text-xs font-mono text-emerald-800 font-bold mb-2">
+              <Cpu className="w-3.5 h-3.5 text-emerald-600" />
               <span>{project.category}</span>
             </div>
             <h2 className="text-xl sm:text-2xl font-black text-black tracking-tight">
@@ -78,14 +78,14 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Test Metric Highlight if available */}
           {project.testMetric && (
-            <div className="p-3.5 rounded-xl bg-zinc-100 border border-zinc-300 flex items-center justify-between">
+            <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-300 flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-black shrink-0" />
-                <span className="text-xs sm:text-sm font-bold text-black">
+                <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0" />
+                <span className="text-xs sm:text-sm font-bold text-emerald-950">
                   {project.testMetric}
                 </span>
               </div>
-              <span className="text-[10px] font-mono uppercase text-white bg-black px-2.5 py-0.5 rounded font-bold">
+              <span className="text-[10px] font-mono uppercase text-white bg-emerald-600 px-2.5 py-0.5 rounded font-bold">
                 Verified
               </span>
             </div>
@@ -107,7 +107,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="space-y-1.5">
               {project.features.map((feature, idx) => (
                 <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-900 font-normal">
-                  <CheckCircle2 className="w-4 h-4 text-black shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>{feature}</span>
                 </div>
               ))}

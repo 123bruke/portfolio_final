@@ -16,7 +16,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'about', 'journey', 'skills', 'projects', 'ai-architecture', 'problem-solving', 'experience', 'contact'];
+      const sections = ['home', 'about', 'journey', 'skills', 'projects', 'architecture', 'problem-solving', 'experience', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -40,7 +40,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
     { label: 'About', href: '#about', id: 'about' },
     { label: 'Skills', href: '#skills', id: 'skills' },
     { label: 'Projects', href: '#projects', id: 'projects' },
-    { label: 'AI Systems', href: '#ai-architecture', id: 'ai-architecture' },
+    { label: 'Architecture', href: '#architecture', id: 'architecture' },
     { label: 'Problem Solving', href: '#problem-solving', id: 'problem-solving' },
     { label: 'Experience', href: '#experience', id: 'experience' },
     { label: 'Contact', href: '#contact', id: 'contact' },
@@ -73,7 +73,8 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             <span className="text-sm font-bold tracking-tight text-black group-hover:text-zinc-700 transition-colors">
               {PERSONAL_INFO.name}
             </span>
-            <span className="text-[11px] font-mono text-zinc-600 font-semibold tracking-wider">
+            <span className="text-[11px] font-mono text-zinc-600 font-semibold tracking-wider flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
               ASTU • Full-Stack & AI/ML
             </span>
           </div>

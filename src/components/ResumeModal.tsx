@@ -160,8 +160,8 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           style={{ transform: `scale(${zoomLevel / 100})` }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Top Decorative Solid Black Strip */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-black" />
+          {/* Top Decorative Strip */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-emerald-600" />
 
           {/* Header Section */}
           <div className="border-b-2 border-black pb-5 mb-6">
@@ -170,13 +170,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <h1 className="text-3xl sm:text-4xl font-black text-black tracking-tight font-serif uppercase">
                   {PERSONAL_INFO.name}
                 </h1>
-                <p className="text-xs sm:text-sm font-black text-black tracking-wider uppercase mt-1">
+                <p className="text-xs sm:text-sm font-black text-emerald-800 tracking-wider uppercase mt-1">
                   Full-Stack Developer • AI/ML Engineer
                 </p>
               </div>
               <div className="text-[11px] text-black text-left sm:text-right font-medium space-y-0.5">
                 <div>Addis Ababa / Adama, Ethiopia</div>
-                <div className="font-mono text-black font-bold">{PERSONAL_INFO.email}</div>
+                <div className="font-mono text-emerald-800 font-bold">{PERSONAL_INFO.email}</div>
                 <div>{PERSONAL_INFO.phone}</div>
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:underline font-bold"
+                className="flex items-center gap-1 hover:text-emerald-700 font-bold"
               >
                 <Github className="w-3 h-3 text-black" />
                 github.com/123bruke
@@ -196,13 +196,13 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 href={PERSONAL_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 hover:underline font-bold"
+                className="flex items-center gap-1 hover:text-emerald-700 font-bold"
               >
                 <Linkedin className="w-3 h-3 text-black" />
                 linkedin.com/in/biruk-ahmye
               </a>
-              <span className="flex items-center gap-1 text-black font-semibold">
-                <GraduationCap className="w-3 h-3 text-black" />
+              <span className="flex items-center gap-1 text-emerald-800 font-bold">
+                <GraduationCap className="w-3 h-3 text-emerald-700" />
                 ASTU Engineering (2024 — 2028)
               </span>
             </div>
@@ -211,7 +211,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Professional Summary */}
           <div className="mb-6">
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Professional Summary
             </h2>
             <p className="text-xs leading-relaxed text-black">
@@ -222,7 +222,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Education */}
           <div className="mb-6">
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Education
             </h2>
             <div className="flex justify-between items-baseline">
@@ -246,7 +246,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Technical Skills */}
           <div className="mb-6">
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Technical Core Competencies
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-4 text-xs text-black">
@@ -274,7 +274,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Key Projects */}
           <div className="mb-6">
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-3 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Featured Technical Projects
             </h2>
 
@@ -340,7 +340,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Practical Experience & Leadership */}
           <div className="mb-6">
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2.5 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Experience & Academic Practice
             </h2>
 
@@ -365,7 +365,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           {/* Certifications & Competitions */}
           <div>
             <h2 className="text-xs font-black uppercase tracking-widest text-black pb-1 border-b border-black mb-2 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 bg-black rounded-full" />
+              <span className="w-1.5 h-1.5 bg-emerald-600 rounded-full" />
               Problem Solving Profiles
             </h2>
             <div className="flex flex-wrap items-center justify-between text-xs text-black gap-2">
