@@ -68,14 +68,14 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
           {/* Bento Cell 1: Core Identity & Dynamic Positioning (8 cols) */}
           <div className="lg:col-span-8 bento-card p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
             <div>
-              {/* Status & University Pill */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-300 text-xs font-mono mb-5 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-black shrink-0" />
-                <span className="font-bold text-black">
+              {/* Status & University Pill with Green Pulse */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-mono mb-5 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span className="font-bold text-emerald-950">
                   ASTU Engineering (2024 — 2028)
                 </span>
-                <span className="text-zinc-400">•</span>
-                <span className="text-zinc-600 font-semibold">
+                <span className="text-emerald-400">•</span>
+                <span className="text-emerald-800 font-semibold">
                   Addis Ababa, Ethiopia
                 </span>
               </div>
@@ -178,10 +178,10 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
                 Full-Stack Developer • AI/ML Engineer
               </div>
 
-              {/* Status Pill */}
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-zinc-100 border border-zinc-300 text-xs text-zinc-900 font-semibold mb-3">
-                <CheckCircle2 className="w-3.5 h-3.5 text-black shrink-0" />
-                <span>Available for AI & Full-Stack Projects</span>
+              {/* Status Pill with Green Main Point Highlight */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 text-xs text-emerald-950 font-bold mb-3 shadow-2xs">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span>Available for AI & Full-Stack Roles</span>
               </div>
 
               {/* Verified Links */}
@@ -190,7 +190,7 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
                   href={PERSONAL_INFO.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white border border-zinc-300 hover:bg-zinc-100 text-black transition-colors"
+                  className="p-2 rounded-lg bg-white border border-zinc-300 hover:border-emerald-500 hover:text-emerald-700 text-black transition-colors"
                 >
                   LinkedIn
                 </a>
@@ -198,7 +198,7 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
                   href={PERSONAL_INFO.leetcode}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white border border-zinc-300 hover:bg-zinc-100 text-black transition-colors"
+                  className="p-2 rounded-lg bg-white border border-zinc-300 hover:border-emerald-500 hover:text-emerald-700 text-black transition-colors"
                 >
                   LeetCode
                 </a>
@@ -208,46 +208,46 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
 
         </div>
 
-        {/* Bento Quick Highlights Grid Row (3 Cards) */}
+        {/* Bento Quick Highlights Grid Row (3 Cards with Green Main Point Highlights) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-5 sm:mt-6">
           
-          <div className="bento-card p-5 flex items-start gap-3.5">
-            <div className="p-2.5 rounded-xl bg-zinc-100 border border-zinc-300 text-black shrink-0">
+          <div className="bento-card p-5 flex items-start gap-3.5 hover:border-emerald-300 transition-all duration-200">
+            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 shrink-0">
               <Cpu className="w-5 h-5" />
             </div>
             <div>
               <div className="text-sm font-extrabold text-black">
                 AI/ML & Agent Systems
               </div>
-              <p className="text-xs text-zinc-700 mt-1 leading-relaxed">
+              <p className="text-xs text-zinc-700 mt-1 leading-relaxed font-normal">
                 LangGraph, ChromaDB, PyTorch, RAG, BioCypher & Ollama local multi-agent workflows.
               </p>
             </div>
           </div>
 
-          <div className="bento-card p-5 flex items-start gap-3.5">
-            <div className="p-2.5 rounded-xl bg-zinc-100 border border-zinc-300 text-black shrink-0">
+          <div className="bento-card p-5 flex items-start gap-3.5 hover:border-emerald-300 transition-all duration-200">
+            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 shrink-0">
               <Layers className="w-5 h-5" />
             </div>
             <div>
               <div className="text-sm font-extrabold text-black">
                 Full-Stack Systems
               </div>
-              <p className="text-xs text-zinc-700 mt-1 leading-relaxed">
-                React 19, TypeScript, FastAPI, Node.js, PostgreSQL, Tailwind CSS & REST APIs.
+              <p className="text-xs text-zinc-700 mt-1 leading-relaxed font-normal">
+                React 18, TypeScript, FastAPI, Node.js, PostgreSQL, Tailwind CSS & REST APIs.
               </p>
             </div>
           </div>
 
-          <div className="bento-card p-5 flex items-start gap-3.5">
-            <div className="p-2.5 rounded-xl bg-zinc-100 border border-zinc-300 text-black shrink-0">
+          <div className="bento-card p-5 flex items-start gap-3.5 hover:border-emerald-300 transition-all duration-200">
+            <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 shrink-0">
               <GraduationCap className="w-5 h-5" />
             </div>
             <div>
               <div className="text-sm font-extrabold text-black">
                 ASTU Engineering (2024 — 2028)
               </div>
-              <p className="text-xs text-zinc-700 mt-1 leading-relaxed">
+              <p className="text-xs text-zinc-700 mt-1 leading-relaxed font-normal">
                 Adama Science and Technology University B.Sc. candidate with hands-on systems rigor.
               </p>
             </div>
