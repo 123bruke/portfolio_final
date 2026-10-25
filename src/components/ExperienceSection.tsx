@@ -15,6 +15,48 @@ import {
 import { PERSONAL_INFO } from '../data/personal';
 import SectionBorderFrame from './SectionBorderFrame';
 
+const experienceEntries = [
+  {
+    company: 'Feature AI',
+    role: 'AI Systems Integration Engineer',
+    period: 'AI Product Integration',
+    summary:
+      'Connected web systems and business workflows to AI agent platforms, enabling secure automation, contextual reasoning, and agent-driven execution across digital products.',
+    achievements: [
+      'Integrated web applications with AI agent orchestration systems using FastAPI, REST APIs, and event-driven workflows for prompt-driven automation.',
+      'Designed data bridges between front-end and back-end services and AI agents so large language models could access structured context, tools, and business state safely.',
+      'Built reusable API contracts and workflow guards for authentication, validation, observability, and human approval checkpoints in AI-driven operations.',
+    ],
+    tags: ['FastAPI', 'AI Agents', 'REST APIs', 'LLM Integration', 'PostgreSQL', 'Redis'],
+  },
+  {
+    company: 'Skillbridge Technology',
+    role: 'AI-Powered Game Systems Developer',
+    period: 'Game AI & Gameplay Logic',
+    summary:
+      'Developed AI-enhanced gameplay systems that combined game logic, adaptive behavior, and intelligent event handling to create more dynamic user experiences.',
+    achievements: [
+      'Implemented NPC decision systems, adaptive challenge balancing, and procedural response logic to improve engagement and gameplay depth.',
+      'Connected game logic with data pipelines and state tracking systems so behavioral AI could respond to player actions and evolving game conditions.',
+      'Built modular game-engine components for easier feature iteration, system scaling, and future AI-driven enhancements.',
+    ],
+    tags: ['Unity', 'C#', 'Game AI', 'Behavior Logic', 'Python', 'Analytics'],
+  },
+  {
+    company: 'Rise Technology',
+    role: 'Full-Stack Engineer',
+    period: 'Large Hotel Management Systems',
+    summary:
+      'Worked on large-scale hotel management solutions supporting reservations, operational workflows, and business process automation across a high-traffic hospitality platform.',
+    achievements: [
+      'Developed and maintained core hotel operations modules covering room management, billing, booking workflows, service tracking, and operational dashboards.',
+      'Built scalable web application features with modern frontend and backend patterns to support reliable daily operations across multiple hospitality processes.',
+      'Improved data consistency, workflow automation, and operational visibility through structured APIs, permission-aware modules, and backend integrations.',
+    ],
+    tags: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'REST API', 'Hotel Systems'],
+  },
+];
+
 export default function ExperienceSection() {
   const [isSectionHidden, setIsSectionHidden] = useState(false);
   const [showFullBullets, setShowFullBullets] = useState(true);
@@ -42,8 +84,8 @@ export default function ExperienceSection() {
             {/* Native Hide/Show Button */}
             <button
               onClick={() => setIsSectionHidden(!isSectionHidden)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded-lg border border-zinc-300 bg-white hover:bg-zinc-100 text-black shadow-2xs transition-all duration-200 cursor-pointer self-start sm:self-auto shrink-0"
-              title={isSectionHidden ? "Expand Experience" : "Collapse Experience"}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-bold rounded-lg border border-zinc-300 bg-white hover:bg-zinc-100 text-black shadow-2xs transition-all duration-200"
+              title={isSectionHidden ? 'Expand Experience' : 'Collapse Experience'}
             >
               {isSectionHidden ? (
                 <>
@@ -69,81 +111,56 @@ export default function ExperienceSection() {
           >
             {/* Bento Grid: Experience + Academic Education */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
-              
-              {/* Experience Card (iCog Labs) (7 cols) */}
-              <div className="lg:col-span-7 bento-card p-6 sm:p-7 flex flex-col justify-between hover:border-emerald-300 transition-all duration-200">
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-4 border-b border-zinc-200">
+              {/* Experience Card Stack (7 cols) */}
+              <div className="lg:col-span-7 space-y-4">
+                {experienceEntries.map((job) => (
+                  <div key={job.company} className="bento-card p-5 sm:p-6 flex flex-col justify-between hover:border-emerald-300 transition-all duration-200">
                     <div>
-                      <div className="flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-emerald-600" />
-                        <h3 className="text-lg sm:text-xl font-black text-black tracking-tight">
-                          iCog Labs
-                        </h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 mb-3 border-b border-zinc-200">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <Building2 className="w-4 h-4 text-emerald-600" />
+                            <h3 className="text-lg sm:text-xl font-black text-black tracking-tight">
+                              {job.company}
+                            </h3>
+                          </div>
+                          <div className="text-xs font-mono text-emerald-700 font-bold mt-0.5">
+                            {job.role}
+                          </div>
+                        </div>
+
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-50 border border-emerald-200 text-[11px] font-mono text-emerald-800 font-bold self-start sm:self-auto">
+                          <Calendar className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>{job.period}</span>
+                        </div>
                       </div>
-                      <div className="text-xs font-mono text-emerald-700 font-bold mt-0.5">
-                        AI Engineering & Research Intern
+
+                      <p className="text-xs sm:text-sm text-zinc-800 leading-relaxed mb-4 font-normal">
+                        {job.summary}
+                      </p>
+
+                      <div className="space-y-2.5 mb-5 text-xs text-zinc-800 font-normal">
+                        {job.achievements.map((achievement) => (
+                          <div key={achievement} className="flex items-start gap-2.5">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{achievement}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
 
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-50 border border-emerald-200 text-[11px] font-mono text-emerald-800 font-bold self-start sm:self-auto">
-                      <Calendar className="w-3.5 h-3.5 text-emerald-600" />
-                      <span>Internship / Research</span>
+                    <div className="pt-4 border-t border-zinc-200 flex flex-wrap gap-1.5">
+                      {job.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-zinc-100 border border-zinc-300 text-black font-bold hover:border-emerald-400 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="flex items-center justify-between mb-3">
-                    <p className="text-xs sm:text-sm text-zinc-800 font-normal">
-                      Production-grade agentic AI systems, biomedical knowledge graphs, and test pipelines.
-                    </p>
-                    <button
-                      onClick={() => setShowFullBullets(!showFullBullets)}
-                      className="text-xs font-mono text-zinc-600 hover:text-black font-semibold ml-2 cursor-pointer shrink-0"
-                    >
-                      {showFullBullets ? 'Hide Details' : 'Show Details'}
-                    </button>
-                  </div>
-
-                  {/* Verified technical accomplishments with collapsible container */}
-                  <div
-                    className={`space-y-2.5 transition-all duration-300 ease-in-out overflow-hidden ${
-                      showFullBullets ? 'max-h-[400px] opacity-100 mb-5' : 'max-h-0 opacity-0 mb-1'
-                    } text-xs text-zinc-800 font-normal`}
-                  >
-                    <div className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>
-                        Architected autonomous vendor evaluation workflows using LangGraph ReAct StateGraph, integrating ChromaDB vector retrieval and structured decision boundaries.
-                      </span>
-                    </div>
-
-                    <div className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>
-                        Researched biomedical knowledge representation pipelines with BioCypher and Neo4j ontologies, harmonizing disparate gene and disease data schemas.
-                      </span>
-                    </div>
-
-                    <div className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>
-                        Built and executed automated pytest validation test suites, maintaining a 100% pass rate across 47 comprehensive validation and safety tests.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Technologies strip */}
-                <div className="pt-4 border-t border-zinc-200 flex flex-wrap gap-1.5">
-                  {['LangGraph', 'ChromaDB', 'BioCypher', 'Neo4j', 'FastAPI', 'pytest', 'ReAct Agents'].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-zinc-100 border border-zinc-300 text-black font-bold hover:border-emerald-400 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                ))}
               </div>
 
               {/* Academic Education Card (ASTU) (5 cols) */}
@@ -195,7 +212,6 @@ export default function ExperienceSection() {
                   <span className="text-emerald-700 font-bold">In Progress (B.Sc.)</span>
                 </div>
               </div>
-
             </div>
           </div>
         </SectionBorderFrame>
