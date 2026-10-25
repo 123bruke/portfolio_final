@@ -52,7 +52,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-xs py-2.5'
-          : 'bg-transparent border-b border-transparent py-4'
+          : 'bg-white/80 backdrop-blur-xs border-b border-zinc-100 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
           id="navbar-brand-link"
           className="flex items-center gap-3 group focus:outline-none rounded-md p-1"
         >
-          <div className="relative w-9 h-9 rounded-xl overflow-hidden border-2 border-emerald-500/50 shadow-xs shrink-0 bg-zinc-950 group-hover:border-emerald-500 transition-colors">
+          <div className="relative w-9 h-9 rounded-xl overflow-hidden border border-zinc-300 shadow-xs shrink-0 bg-zinc-950 group-hover:border-black transition-colors">
             <img 
               src="/biruk_photo.jpg" 
               alt={PERSONAL_INFO.name} 
@@ -70,10 +70,10 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             />
           </div>
           <div className="flex flex-col text-left">
-            <span className="text-sm font-bold tracking-tight text-zinc-950 group-hover:text-emerald-700 transition-colors">
+            <span className="text-sm font-bold tracking-tight text-black group-hover:text-zinc-700 transition-colors">
               {PERSONAL_INFO.name}
             </span>
-            <span className="text-[11px] font-mono text-emerald-700 font-bold tracking-wider">
+            <span className="text-[11px] font-mono text-zinc-600 font-semibold tracking-wider">
               ASTU • Full-Stack & AI/ML
             </span>
           </div>
@@ -88,10 +88,10 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 key={link.id}
                 id={`nav-link-${link.id}`}
                 href={link.href}
-                className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-3 py-1.5 text-xs rounded-lg transition-colors ${
                   isActive
-                    ? 'text-emerald-950 bg-emerald-100 border border-emerald-300 font-bold'
-                    : 'text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100'
+                    ? 'text-black bg-zinc-100 border border-zinc-300 font-bold'
+                    : 'text-zinc-700 hover:text-black hover:bg-zinc-100 font-semibold'
                 }`}
               >
                 {link.label}
@@ -109,7 +109,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
               className="btn-secondary px-2.5 py-1.5 text-xs"
               title="Open Interactive Developer Terminal"
             >
-              <Terminal className="w-3.5 h-3.5 text-emerald-700" />
+              <Terminal className="w-3.5 h-3.5 text-zinc-800" />
               <span>Terminal</span>
             </button>
           )}
@@ -120,7 +120,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="btn-secondary p-2 text-zinc-800"
+            className="btn-secondary p-2 text-zinc-900"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -128,9 +128,9 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
           <button
             id="nav-resume-button"
             onClick={onOpenResume}
-            className="btn-secondary px-3 py-1.5 text-xs"
+            className="btn-secondary px-3 py-1.5 text-xs text-zinc-900"
           >
-            <FileText className="w-3.5 h-3.5 text-emerald-700" />
+            <FileText className="w-3.5 h-3.5 text-zinc-800" />
             <span>Resume</span>
           </button>
 

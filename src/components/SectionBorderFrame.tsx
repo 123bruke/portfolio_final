@@ -14,7 +14,7 @@ export default function SectionBorderFrame({
   return (
     <div
       id={id}
-      className={`clean-frame-container relative rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 my-8 sm:my-10 transition-colors duration-200 ${className}`}
+      className={`relative py-4 sm:py-6 ${className}`}
     >
       {children}
     </div>
