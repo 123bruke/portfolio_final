@@ -16,6 +16,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Agent Workflows', level: 'Current Focus', highlight: true },
       { name: 'Prompt Engineering', level: 'Experienced' },
       { name: 'AI App Architecture', level: 'Current Focus' },
+      { name: 'Multimodal Vision RAG', level: 'Current Focus', highlight: true },
+      { name: 'ColPali / Vision LLMs', level: 'Hands-on', highlight: true },
       { name: 'FastAPI AI Services', level: 'Hands-on' }
     ]
   },

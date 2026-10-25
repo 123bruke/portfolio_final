@@ -41,6 +41,44 @@ export const FEATURED_PROJECTS: Project[] = [
     type: 'multi-agent'
   },
   {
+    id: 'visionrag',
+    title: 'VisionRAG — Multimodal Retrieval-Augmented Generation',
+    category: 'RAG',
+    secondaryCategories: ['AI / ML', 'Computer Vision'],
+    description: 'Production-grade Multimodal RAG platform synthesizing grounded answers across technical diagrams, multi-column scientific PDFs, high-resolution imagery, and video streams.',
+    longDescription: 'VisionRAG is an advanced multimodal retrieval-augmented generation platform capable of ingesting, parsing, grounding, and reasoning over complex visual documents. Features ColPali-inspired visual bounding box coordinate retrieval, citation pills with confidence scores, real-time voice mode with audio speech synthesis, and live camera feed inspection.',
+    technologies: ['Python', 'FastAPI', 'ColPali', 'Vision LLMs', 'Multimodal Embeddings', 'LangChain', 'React', 'TypeScript', 'WebRTC', 'ChromaDB'],
+    features: [
+      'Multimodal ingestion pipeline supporting complex PDFs, diagrams, high-res images, video frames, and audio',
+      'Interactive visual grounding with bounding box coordinate overlays and exact chunk match confidence scores',
+      'ChatGPT-style clean interface with centered streaming chat, typewriter effect, and code syntax highlighting',
+      'Real-time hands-free Voice Mode with fluid speech synthesis and microphone transcription',
+      'Live camera feed mode with frame capture for on-the-fly visual RAG queries',
+      'Workspace folder hierarchy and session grouping (Today, Yesterday, Previous 7 Days)',
+      'Configurable Top-K retrieval parameters and multimodal vector similarity matching'
+    ],
+    architectureSummary: 'Multimodal Assets (PDF/Image/Video) -> Visual Parser & Chunking -> Multimodal Vector Embeddings -> ChromaDB -> Top-K Visual Grounding -> Vision LLM Synthesis',
+    architectureNodes: [
+      { id: 'vr-input', label: 'Multimodal Assets', role: 'PDFs, Diagrams, Videos & Live Cam', highlight: false },
+      { id: 'vr-parser', label: 'Visual Chunking', role: 'ColPali Bounding Box Segmentation', highlight: true },
+      { id: 'vr-embed', label: 'Multimodal Embeddings', role: 'Cross-Modal Vector Representation', highlight: false },
+      { id: 'vr-vector', label: 'Vector Database', role: 'ChromaDB Top-K Similarity Search', highlight: false },
+      { id: 'vr-ground', label: 'Visual Grounding', role: 'Citation Pills & Bounding Coordinates', highlight: true },
+      { id: 'vr-llm', label: 'Vision LLM Synthesis', role: 'Grounded Answer Generation & Voice TTS', highlight: true }
+    ],
+    architectureFlow: [
+      'Document / Image / Video Ingestion',
+      'ColPali Visual Segmentation',
+      'Multimodal Vector Embeddings',
+      'ChromaDB Vector Retrieval',
+      'Bounding Box Visual Grounding',
+      'Vision LLM Response & Speech Synthesis'
+    ],
+    githubUrl: 'https://github.com/123bruke/Gen_AI/tree/main/VisionRAG',
+    featured: true,
+    type: 'pipeline'
+  },
+  {
     id: 'moseb-job-portal',
     title: 'Moseb AI-Powered Job Portal',
     category: 'AI Agents',

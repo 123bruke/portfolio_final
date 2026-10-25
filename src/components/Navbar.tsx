@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, FileText, ArrowRight, Sun, Moon, Terminal } from 'lucide-react';
+import { Menu, X, Github, Linkedin, FileText, ArrowRight, Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/personal';
-import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onOpenResume: () => void;
@@ -12,7 +11,6 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +51,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 shadow-sm py-2.5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-xs py-2.5'
           : 'bg-transparent border-b border-transparent py-4'
       }`}
     >
@@ -72,10 +70,10 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             />
           </div>
           <div className="flex flex-col text-left">
-            <span className="text-sm font-bold tracking-tight text-zinc-950 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+            <span className="text-sm font-bold tracking-tight text-zinc-950 group-hover:text-emerald-700 transition-colors">
               {PERSONAL_INFO.name}
             </span>
-            <span className="text-[11px] font-mono text-emerald-700 dark:text-emerald-400 font-bold tracking-wider">
+            <span className="text-[11px] font-mono text-emerald-700 font-bold tracking-wider">
               ASTU • Full-Stack & AI/ML
             </span>
           </div>
@@ -92,8 +90,8 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 href={link.href}
                 className={`px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   isActive
-                    ? 'text-emerald-900 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-500/40 font-bold'
-                    : 'text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/60'
+                    ? 'text-emerald-950 bg-emerald-100 border border-emerald-300 font-bold'
+                    : 'text-zinc-700 hover:text-zinc-950 hover:bg-zinc-100'
                 }`}
               >
                 {link.label}
@@ -102,7 +100,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
           })}
         </nav>
 
-        {/* Right Action Tools: Terminal, Theme Toggle, Resume, Connect */}
+        {/* Right Action Tools: Terminal, Resume, Connect */}
         <div className="hidden sm:flex items-center gap-2">
           {/* Interactive Dev Terminal Trigger */}
           {onOpenConsole && (
@@ -111,26 +109,10 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
               className="btn-secondary px-2.5 py-1.5 text-xs"
               title="Open Interactive Developer Terminal"
             >
-              <Terminal className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+              <Terminal className="w-3.5 h-3.5 text-emerald-700" />
               <span>Terminal</span>
             </button>
           )}
-
-          {/* Theme Toggle Button */}
-          <button
-            id="theme-toggle-btn"
-            type="button"
-            onClick={toggleTheme}
-            className="btn-secondary p-2 rounded-xl text-zinc-800 dark:text-zinc-200"
-            aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-emerald-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-emerald-700" />
-            )}
-          </button>
 
           <a
             id="nav-github-link"
@@ -138,7 +120,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile"
-            className="btn-secondary p-2 text-zinc-800 dark:text-zinc-200"
+            className="btn-secondary p-2 text-zinc-800"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -148,7 +130,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             onClick={onOpenResume}
             className="btn-secondary px-3 py-1.5 text-xs"
           >
-            <FileText className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+            <FileText className="w-3.5 h-3.5 text-emerald-700" />
             <span>Resume</span>
           </button>
 
@@ -162,21 +144,8 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
           </a>
         </div>
 
-        {/* Mobile menu trigger & Theme toggle */}
+        {/* Mobile menu trigger */}
         <div className="flex items-center gap-2 lg:hidden">
-          <button
-            type="button"
-            onClick={toggleTheme}
-            className="btn-secondary p-2"
-            aria-label="Toggle Theme"
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-emerald-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-emerald-700" />
-            )}
-          </button>
-
           <button
             id="mobile-menu-trigger"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -192,7 +161,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
       {mobileMenuOpen && (
         <div 
           id="mobile-nav-menu"
-          className="lg:hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800 px-4 pt-3 pb-6 space-y-2 mt-2 shadow-xl"
+          className="lg:hidden bg-white border-b border-zinc-200 px-4 pt-3 pb-6 space-y-2 mt-2 shadow-xl"
         >
           <div className="grid grid-cols-1 gap-1">
             {navLinks.map((link) => (
@@ -202,8 +171,8 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-colors ${
                   activeSection === link.id
-                    ? 'text-emerald-900 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950/60 font-bold'
-                    : 'text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                    ? 'text-emerald-950 bg-emerald-100 font-bold'
+                    : 'text-zinc-700 hover:bg-zinc-100'
                 }`}
               >
                 {link.label}
@@ -211,7 +180,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
             ))}
           </div>
 
-          <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 grid grid-cols-3 gap-2">
+          <div className="pt-4 border-t border-zinc-200 grid grid-cols-3 gap-2">
             {onOpenConsole && (
               <button
                 onClick={() => {
@@ -220,7 +189,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
                 }}
                 className="btn-secondary py-2 text-xs"
               >
-                <Terminal className="w-3.5 h-3.5 text-emerald-500" />
+                <Terminal className="w-3.5 h-3.5 text-emerald-600" />
                 <span>CLI</span>
               </button>
             )}
@@ -232,7 +201,7 @@ export default function Navbar({ onOpenResume, onOpenConsole }: NavbarProps) {
               }}
               className="btn-secondary py-2 text-xs"
             >
-              <FileText className="w-3.5 h-3.5 text-emerald-500" />
+              <FileText className="w-3.5 h-3.5 text-emerald-600" />
               <span>Resume</span>
             </button>
 

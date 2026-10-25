@@ -21,15 +21,10 @@ function PortfolioApp() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isConsoleOpen, setIsConsoleOpen] = useState(false);
-  const { theme } = useTheme();
 
   return (
     <div
-      className={`min-h-screen relative ${
-        theme === 'dark'
-          ? 'bg-[#09090b] text-zinc-100 bg-clean-grid-dark'
-          : 'bg-[#f8fafc] text-zinc-900 bg-clean-grid-light'
-      } flex flex-col selection:bg-emerald-500/25 selection:text-emerald-700 dark:selection:text-emerald-300 transition-colors duration-200 overflow-x-hidden`}
+      className="min-h-screen relative bg-[#f8fafc] text-zinc-900 bg-clean-grid-light flex flex-col selection:bg-emerald-500/25 selection:text-emerald-700 transition-colors duration-200 overflow-x-hidden"
     >
       {/* Sticky Clean Navbar */}
       <Navbar 

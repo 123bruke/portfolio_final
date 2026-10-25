@@ -97,6 +97,85 @@ export default function ProjectDiagram({ project }: ProjectDiagramProps) {
     );
   }
 
+  if (project.id === 'visionrag') {
+    return (
+      <div className="p-4 rounded-xl bg-white border border-slate-200 font-mono text-xs shadow-md">
+        <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 text-[11px]">
+          <span className="flex items-center gap-1.5 text-emerald-800 font-bold">
+            <Layers className="w-3.5 h-3.5 text-emerald-600" />
+            MULTIMODAL VISION-LANGUAGE RAG PIPELINE
+          </span>
+          <span className="text-emerald-950 font-bold bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">
+            ColPali + Vision LLMs
+          </span>
+        </div>
+
+        {/* Multimodal Architecture Visual Flow */}
+        <div className="space-y-2">
+          {/* Inputs Row */}
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div className="p-2 rounded bg-slate-50 border border-slate-200">
+              <div className="text-[11px] font-bold text-zinc-950">Technical PDFs</div>
+              <div className="text-[9px] text-zinc-500">Multi-column & Tables</div>
+            </div>
+            <div className="p-2 rounded bg-slate-50 border border-slate-200">
+              <div className="text-[11px] font-bold text-zinc-950">Diagrams & Images</div>
+              <div className="text-[9px] text-zinc-500">Schematics & Charts</div>
+            </div>
+            <div className="p-2 rounded bg-slate-50 border border-slate-200">
+              <div className="text-[11px] font-bold text-zinc-950">Live Camera / Video</div>
+              <div className="text-[9px] text-zinc-500">Real-time Frames</div>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <ArrowDown className="w-3.5 h-3.5 text-emerald-600" />
+          </div>
+
+          {/* ColPali Segmentation */}
+          <div className="p-2.5 rounded bg-emerald-50 border border-emerald-200 text-center">
+            <div className="text-emerald-950 font-bold text-xs flex items-center justify-center gap-1.5">
+              <Cpu className="w-3.5 h-3.5 text-emerald-600" />
+              ColPali Visual Segmentation & Vector Embeddings
+            </div>
+            <div className="text-[10px] text-zinc-600 mt-0.5">Generates cross-modal embeddings with bounding-box coordinate tracking</div>
+          </div>
+
+          <div className="flex justify-center">
+            <ArrowDown className="w-3.5 h-3.5 text-emerald-600" />
+          </div>
+
+          {/* Vector Retrieval & Visual Grounding */}
+          <div className="grid grid-cols-2 gap-2">
+            <div className="p-2 rounded bg-slate-50 border border-slate-200 flex items-center gap-2">
+              <Database className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+              <div>
+                <div className="text-[10px] font-bold text-zinc-950">ChromaDB Store</div>
+                <div className="text-[9px] text-zinc-500">Top-K Multimodal Recall</div>
+              </div>
+            </div>
+            <div className="p-2 rounded bg-emerald-50 border border-emerald-300 flex items-center gap-2">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+              <div>
+                <div className="text-[10px] font-bold text-emerald-950">Visual Grounding</div>
+                <div className="text-[9px] text-emerald-800">Citation Pills (96% Match)</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <ArrowDown className="w-3.5 h-3.5 text-emerald-600" />
+          </div>
+
+          {/* Synthesized Response */}
+          <div className="p-2 rounded bg-emerald-100 border border-emerald-300 text-center text-emerald-950 font-bold text-xs">
+            Vision LLM Grounded Answer + Real-Time Voice Synthesis (TTS)
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (project.id === 'icog-vendor-agent') {
     const steps = [
       { name: 'REASON', desc: 'Assess vendor policy constraints & risk category' },
