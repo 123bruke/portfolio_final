@@ -17,6 +17,19 @@ import SectionBorderFrame from './SectionBorderFrame';
 
 const experienceEntries = [
   {
+    company: 'iCog Labs',
+    role: 'AI Engineering Intern',
+    period: 'AI Engineering & Research',
+    summary:
+      'Worked on production-ready AI systems and research-driven agent workflows, connecting advanced language models with structured knowledge systems and evaluation pipelines.',
+    achievements: [
+      'Architected autonomous evaluation workflows using LangGraph ReAct StateGraph, combining ChromaDB vector retrieval and structured decision boundaries for agentic AI reasoning.',
+      'Researched biomedical knowledge representation pipelines with BioCypher and Neo4j to harmonize gene and disease data across heterogeneous schemas.',
+      'Built and executed automated pytest validation frameworks, delivering a 100% pass rate across safety, validation, and decision-quality test suites.',
+    ],
+    tags: ['LangGraph', 'ChromaDB', 'BioCypher', 'Neo4j', 'FastAPI', 'pytest', 'ReAct Agents'],
+  },
+  {
     company: 'Feature AI',
     role: 'AI Systems Integration Engineer',
     period: 'AI Product Integration',
