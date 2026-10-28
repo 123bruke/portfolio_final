@@ -16,6 +16,9 @@ A modern personal portfolio website for Biruk Ahmye, built with React, TypeScrip
 
 ## Tech Stack
 
+
+
+
 - React 19
 - TypeScript
 - Vite
