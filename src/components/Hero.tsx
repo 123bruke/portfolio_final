@@ -61,25 +61,11 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
       className="relative pt-24 sm:pt-28 pb-10 sm:pb-14 flex items-center justify-center transition-colors duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        
         {/* Main Hero Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-stretch">
-          
           {/* Bento Cell 1: Core Identity & Dynamic Positioning (8 cols) */}
           <div className="lg:col-span-8 bento-card p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
             <div>
-              {/* Status & University Pill with Green Pulse */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-300 text-xs font-mono mb-5 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span className="font-bold text-emerald-950">
-                  ASTU Engineering (2024 — 2028)
-                </span>
-                <span className="text-emerald-400">•</span>
-                <span className="text-emerald-800 font-semibold">
-                  Addis Ababa, Ethiopia
-                </span>
-              </div>
-
               {/* Main Name */}
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black mb-3">
                 {PERSONAL_INFO.name}
@@ -108,58 +94,38 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
 
             {/* Actions Button Strip */}
             <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-zinc-200">
-              <a
-                href="#projects"
-                className="btn-primary"
-              >
+              <a href="#projects" className="btn-primary">
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
-              <button
-                type="button"
-                onClick={onOpenResume}
-                className="btn-secondary"
-              >
+              <button type="button" onClick={onOpenResume} className="btn-secondary">
                 <FileText className="w-4 h-4 text-zinc-800" />
                 <span>Resume (PDF)</span>
               </button>
 
               {onOpenConsole && (
-                <button
-                  type="button"
-                  onClick={onOpenConsole}
-                  className="btn-secondary"
-                >
+                <button type="button" onClick={onOpenConsole} className="btn-secondary">
                   <Terminal className="w-4 h-4 text-zinc-800" />
                   <span>Dev Terminal</span>
                 </button>
               )}
 
-              <a
-                href={PERSONAL_INFO.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary"
-              >
+              <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 <Github className="w-4 h-4 text-zinc-800" />
                 <span>GitHub</span>
                 <ExternalLink className="w-3.5 h-3.5 opacity-60" />
               </a>
 
-              <a
-                href="#contact"
-                className="btn-secondary"
-              >
+              <a href="#contact" className="btn-secondary">
                 <Mail className="w-4 h-4 text-zinc-800" />
                 <span>Contact</span>
               </a>
             </div>
           </div>
 
-          {/* Bento Cell 2: Portrait & Availability (4 cols) */}
+          {/* Bento Cell 2: Portrait & Profile (4 cols) */}
           <div className="lg:col-span-4 bento-card p-6 flex flex-col items-center justify-between text-center">
-            {/* Portrait Frame */}
             <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border border-zinc-300 shadow-md bg-zinc-100 mb-4 mt-2">
               <img
                 src={portraitImage}
@@ -171,17 +137,9 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
 
             {/* Quick Profile Meta */}
             <div className="w-full">
-              <div className="text-base font-extrabold text-black">
-                Biruk Ahmye
-              </div>
+              <div className="text-base font-extrabold text-black">Biruk Ahmye</div>
               <div className="text-xs font-mono text-zinc-600 font-bold mb-3">
                 Full-Stack Developer • AI/ML Engineer
-              </div>
-
-              {/* Status Pill with Green Main Point Highlight */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 text-xs text-emerald-950 font-bold mb-3 shadow-2xs">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                <span>Available for AI & Full-Stack Roles</span>
               </div>
 
               {/* Verified Links */}
@@ -205,20 +163,16 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Bento Quick Highlights Grid Row (3 Cards with Green Main Point Highlights) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 mt-5 sm:mt-6">
-          
           <div className="bento-card p-5 flex items-start gap-3.5 hover:border-emerald-300 transition-all duration-200">
             <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-600 shrink-0">
               <Cpu className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-black">
-                AI/ML & Agent Systems
-              </div>
+              <div className="text-sm font-extrabold text-black">AI/ML & Agent Systems</div>
               <p className="text-xs text-zinc-700 mt-1 leading-relaxed font-normal">
                 LangGraph, ChromaDB, PyTorch, RAG, BioCypher & Ollama local multi-agent workflows.
               </p>
@@ -230,9 +184,7 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
               <Layers className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-extrabold text-black">
-                Full-Stack Systems
-              </div>
+              <div className="text-sm font-extrabold text-black">Full-Stack Systems</div>
               <p className="text-xs text-zinc-700 mt-1 leading-relaxed font-normal">
                 React 18, TypeScript, FastAPI, Node.js, PostgreSQL, Tailwind CSS & REST APIs.
               </p>
@@ -252,9 +204,7 @@ export default function Hero({ onOpenResume, onOpenConsole }: HeroProps) {
               </p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );
