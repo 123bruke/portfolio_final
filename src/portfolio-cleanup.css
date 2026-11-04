@@ -29,27 +29,3 @@ section:not(#home) .inline-flex.items-center.gap-2.px-3.py-1.rounded-md {
 #architecture .bento-card .flex.items-center.gap-2:has(> h3) > span:nth-child(2) {
   display: none !important;
 }
-
-/* Gentle, continuous floating motion for content cards. */
-@keyframes gentle-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-
-.bento-card {
-  animation: gentle-float 7s ease-in-out infinite;
-}
-
-.bento-card:nth-child(2n) {
-  animation-delay: -3.5s;
-}
-
-.bento-card:nth-child(3n) {
-  animation-delay: -2s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bento-card {
-    animation: none !important;
-  }
-}
