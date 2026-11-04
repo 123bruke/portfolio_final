@@ -1,0 +1,55 @@
+/* Hide decorative all-caps section labels across the portfolio. */
+section:not(#home) .inline-flex.items-center.gap-2.px-3.py-1.rounded-md {
+  display: none !important;
+}
+
+/* Remove the philosophy chip while keeping the bio control. */
+#about .flex.items-center.justify-between.text-xs.font-mono.font-bold.mb-3 > span:first-child {
+  display: none !important;
+}
+
+/* Remove skill-focus messaging, legend, and per-skill focus badges. */
+#skills .max-w-xl,
+#skills .flex.flex-wrap.items-center.gap-2.text-xs,
+#skills [title$="(Current Focus)"] > span:last-child,
+#skills .mt-4.pt-3.border-t.border-zinc-200 > span:last-child {
+  display: none !important;
+}
+
+#skills [title$="(Current Focus)"] {
+  background-color: #fff !important;
+  color: #18181b !important;
+  border-color: #d4d4d8 !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+/* Simplify stack rows by removing their Tier chip and dot. */
+#architecture .bento-card .flex.items-center.gap-2:has(> h3) > span:first-child,
+#architecture .bento-card .flex.items-center.gap-2:has(> h3) > span:nth-child(2) {
+  display: none !important;
+}
+
+/* Gentle, continuous floating motion for content cards. */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.bento-card {
+  animation: gentle-float 7s ease-in-out infinite;
+}
+
+.bento-card:nth-child(2n) {
+  animation-delay: -3.5s;
+}
+
+.bento-card:nth-child(3n) {
+  animation-delay: -2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-card {
+    animation: none !important;
+  }
+}
