@@ -21,6 +21,7 @@ import { SKILL_CATEGORIES } from './data/skills';
 import type { Project } from './types';
 import portraitImage from './assets/images/biruk_portrait_1789856194221.jpg';
 import './portfolio-redesign.css';
+import './project-details.css';
 
 const navigation = [
   { label: 'About', href: '#about' },
@@ -33,7 +34,7 @@ const navigation = [
 const filters = ['All', 'AI / ML', 'AI Agents', 'Full-Stack', 'Research'] as const;
 type ProjectFilter = (typeof filters)[number];
 
-// Keep the football platform first so it is the first project visitors see.
+// Keep PitchSide at index zero so it leads the Projects section for every filter it matches.
 const footballDigitalProject: Project = {
   id: 'ethio-football-digitals',
   title: 'Ethio Football Digitals — PitchSide',
@@ -171,13 +172,23 @@ export default function App() {
           <div className="projects-grid">
             {projects.map((project, index) => (
               <article className={`project-card${project.id === 'ethio-football-digitals' ? ' project-card-spotlight' : ''}`} key={project.id}>
-                <div className={`project-art project-art-${index % 4}`} aria-hidden="true"><span className="project-art-index">0{index + 1}</span><div className="project-art-shape"><Layers3 size={34} strokeWidth={1.2} /></div><span className="project-category">{project.category}</span></div>
+                <div className={`project-art project-art-${index % 4}`} aria-hidden="true"><span className="project-art-index">{String(index + 1).padStart(2, '0')}</span><div className="project-art-shape"><Layers3 size={34} strokeWidth={1.2} /></div><span className="project-category">{project.category}</span></div>
                 <div className="project-content">
                   <div className="project-title-row"><h3>{project.title}</h3><a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}><ArrowUpRight size={18} /></a></div>
                   <p>{project.description}</p>
                   {project.testMetric && <div className="project-metric">{project.testMetric}</div>}
                   <div className="project-tech">{project.technologies.slice(0, 5).map((technology) => <span key={technology}>{technology}</span>)}</div>
-                  <a className="project-link" href={project.githubUrl} target="_blank" rel="noreferrer"><Github size={15} /> View project <ArrowUpRight size={14} /></a>
+                  <div className="project-card-actions">
+                    <a className="project-link" href={project.githubUrl} target="_blank" rel="noreferrer"><Github size={15} /> GitHub Repo <ArrowUpRight size={14} /></a>
+                    <details className="project-details">
+                      <summary>View Details <ArrowRight size={14} /></summary>
+                      <div className="project-details-panel">
+                        {project.longDescription && <p>{project.longDescription}</p>}
+                        {project.architectureSummary && <p><strong>Architecture:</strong> {project.architectureSummary}</p>}
+                        {project.features.length > 0 && <ul>{project.features.slice(0, 5).map((feature) => <li key={feature}>{feature}</li>)}</ul>}
+                      </div>
+                    </details>
+                  </div>
                 </div>
               </article>
             ))}
