@@ -2,12 +2,33 @@ import { Project, ProjectCategory } from '../types';
 
 export const FEATURED_PROJECTS: Project[] = [
   {
+    id: 'ethio-football-digitals',
+    title: 'Ethio Football Digitals — PitchSide',
+    category: 'Full-Stack',
+    secondaryCategories: ['AI / ML', 'AI Agents', '3D / Interactive', 'Research', 'Backend'],
+    description: 'A football platform combining a player community, direct messaging, AI football assistant, match predictions, a private admin dashboard, and the original 5v5 football game.',
+    longDescription: 'PitchSide evolves the original 5v5 arcade football project into a broader social and analytics platform. The public player portal includes community features, follow and message flows, AI football support, and a match prediction workflow, while a separate admin app handles private operations and verification.',
+    technologies: ['React 19', 'TypeScript', 'Three.js', 'FastAPI', 'PostgreSQL', 'Neo4j', 'scikit-learn'],
+    features: [
+      'Player profiles, social feed, follow system, and community discovery',
+      'Direct messaging between mutual-follow connections',
+      'AI football assistant and stats questions with clear fallback behavior',
+      'Match prediction workflow using trained historical football data',
+      'Admin-only portal with role-based access and monitoring',
+      'Original 3D 5v5 game preserved and playable'
+    ],
+    architectureSummary: 'Player frontend + admin frontend -> FastAPI services -> PostgreSQL and Neo4j, with local AI assistant and a separate match prediction model workflow.',
+    githubUrl: 'https://github.com/123bruke/Ethio_Football_Digitals',
+    featured: true,
+    type: 'standard'
+  },
+  {
     id: 'omegaclaw',
     title: 'OmegaClaw — Local Multi-Agent AI System',
     category: 'AI Agents',
     secondaryCategories: ['AI / ML', 'Backend'],
     description: 'Production-oriented fully local AI agent platform built with LangGraph, LangChain, Ollama, ChromaDB, and FastAPI.',
-    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized supervisor routes tasks dynamically to specialized research, writer, and reviewer agents backed by ChromaDB vector memory and FastAPI.',
+    longDescription: 'OmegaClaw is an end-to-end local multi-agent architecture designed to run autonomous workflows completely on-premise without relying on external cloud LLM APIs. A centralized supervisor orchestrates research, writing, review, and memory retrieval tasks across specialized agent roles.',
     technologies: ['Python', 'LangGraph', 'LangChain', 'Ollama', 'FastAPI', 'ChromaDB', 'LLMs', 'Vector Memory'],
     features: [
       'Fully local AI architecture executing on consumer hardware via Ollama',
@@ -46,213 +67,119 @@ export const FEATURED_PROJECTS: Project[] = [
     category: 'RAG',
     secondaryCategories: ['AI / ML', 'Computer Vision'],
     description: 'Production-grade Multimodal RAG platform synthesizing grounded answers across technical diagrams, multi-column scientific PDFs, high-resolution imagery, and video streams.',
-    longDescription: 'VisionRAG is an advanced multimodal retrieval-augmented generation platform capable of ingesting, parsing, grounding, and reasoning over complex visual documents. Features ColPali-inspired visual bounding box coordinate retrieval, citation pills with confidence scores, real-time voice mode with audio speech synthesis, and live camera feed inspection.',
+    longDescription: 'VisionRAG is an advanced multimodal retrieval-augmented generation platform capable of ingesting, parsing, grounding, and reasoning over complex visual documents. Features combine vision-language retrieval, structured document parsing, and answer synthesis for grounded outputs.',
     technologies: ['Python', 'FastAPI', 'ColPali', 'Vision LLMs', 'Multimodal Embeddings', 'LangChain', 'React', 'TypeScript', 'WebRTC', 'ChromaDB'],
     features: [
-      'Multimodal ingestion pipeline supporting complex PDFs, diagrams, high-res images, video frames, and audio',
-      'Interactive visual grounding with bounding box coordinate overlays and exact chunk match confidence scores',
-      'ChatGPT-style clean interface with centered streaming chat, typewriter effect, and code syntax highlighting',
-      'Real-time hands-free Voice Mode with fluid speech synthesis and microphone transcription',
-      'Live camera feed mode with frame capture for on-the-fly visual RAG queries',
-      'Workspace folder hierarchy and session grouping (Today, Yesterday, Previous 7 Days)',
-      'Configurable Top-K retrieval parameters and multimodal vector similarity matching'
+      'Retrieval over complex diagrams, PDFs, and high-resolution visual content',
+      'Multimodal embeddings and vector search for grounded answers',
+      'Source-aware generation with evidence tracing',
+      'Interactive visual QA and document interaction workflows',
+      'FastAPI pipeline for scale and reliability'
     ],
-    architectureSummary: 'Multimodal Assets (PDF/Image/Video) -> Visual Parser & Chunking -> Multimodal Vector Embeddings -> ChromaDB -> Top-K Visual Grounding -> Vision LLM Synthesis',
-    architectureNodes: [
-      { id: 'vr-input', label: 'Multimodal Assets', role: 'PDFs, Diagrams, Videos & Live Cam', highlight: false },
-      { id: 'vr-parser', label: 'Visual Chunking', role: 'ColPali Bounding Box Segmentation', highlight: true },
-      { id: 'vr-embed', label: 'Multimodal Embeddings', role: 'Cross-Modal Vector Representation', highlight: false },
-      { id: 'vr-vector', label: 'Vector Database', role: 'ChromaDB Top-K Similarity Search', highlight: false },
-      { id: 'vr-ground', label: 'Visual Grounding', role: 'Citation Pills & Bounding Coordinates', highlight: true },
-      { id: 'vr-llm', label: 'Vision LLM Synthesis', role: 'Grounded Answer Generation & Voice TTS', highlight: true }
-    ],
-    architectureFlow: [
-      'Document / Image / Video Ingestion',
-      'ColPali Visual Segmentation',
-      'Multimodal Vector Embeddings',
-      'ChromaDB Vector Retrieval',
-      'Bounding Box Visual Grounding',
-      'Vision LLM Response & Speech Synthesis'
-    ],
-    githubUrl: 'https://github.com/123bruke/Gen_AI/tree/main/VisionRAG',
-    featured: true,
-    type: 'pipeline'
-  },
-  {
-    id: 'moseb-job-portal',
-    title: 'Moseb AI-Powered Job Portal',
-    category: 'AI Agents',
-    secondaryCategories: ['Full-Stack', 'AI / ML'],
-    description: 'Enterprise-scale AI-powered job matching platform leveraging intelligent agents for resume analysis, job recommendation, and candidate-employer alignment.',
-    longDescription: 'A comprehensive job portal combining AI agents, machine learning, and full-stack architecture to revolutionize job matching. Implements multi-agent orchestration for candidate analysis, automated resume parsing, semantic embedding retrieval, and intelligent candidate-job pairing.',
-    technologies: ['React 19', 'TypeScript', 'Python', 'LangGraph', 'FastAPI', 'Firebase', 'Tailwind CSS', 'Lucide React', 'LLMs', 'Vector Embeddings', 'Zustand'],
-    features: [
-      'Multi-agent AI orchestration for intelligent job matching and candidate ranking',
-      'Resume parsing with skill extraction and proficiency level detection',
-      'Dynamic job requirement analysis with semantic understanding',
-      'Candidate recommendation engine powered by vector embeddings',
-      'Real-time job alerts and notification system with subscriber management',
-      'Recruiter dashboard with applicant tracking and filtering capabilities',
-      'Candidate portfolio showcase with skill endorsements and project links',
-      'Interview scheduling automation with calendar integration',
-      'AI-powered interview preparation assistant with mock questions',
-      'Salary estimation engine based on market data and skill levels',
-      'Search optimization with advanced filtering and faceted navigation'
-    ],
-    architectureSummary: 'Frontend Portal -> AI Agent Orchestrator -> Resume/Job Processors -> Vector Database -> Matching Engine -> Recruiter Dashboard',
-    architectureNodes: [
-      { id: 'candidate', label: 'Candidate Portal', role: 'Profile & Job Search Interface', highlight: false },
-      { id: 'recruiter', label: 'Recruiter Dashboard', role: 'Applicant Tracking & Management', highlight: false },
-      { id: 'orchestrator', label: 'Agent Orchestrator', role: 'Multi-Agent Coordination', highlight: true },
-      { id: 'resume-agent', label: 'Resume Processor', role: 'Skill Extraction & Parsing', highlight: false },
-      { id: 'job-agent', label: 'Job Analyzer', role: 'Requirement Parsing & Classification', highlight: false },
-      { id: 'match-agent', label: 'Matching Engine', role: 'Intelligent Job-Candidate Pairing', highlight: true },
-      { id: 'vector-db', label: 'Vector Database', role: 'Skill & Requirement Embeddings', highlight: false },
-      { id: 'recommendations', label: 'Recommendations', role: 'Ranked Job & Candidate Matches', highlight: true }
-    ],
-    architectureFlow: [
-      'Candidate Portal',
-      'Resume Upload',
-      'Resume Processor',
-      'Vector Database',
-      'Matching Engine',
-      'Job Recommendations',
-      'Real-time Alerts'
-    ],
-    testMetric: 'Integrated testing across AI agents, API endpoints, and frontend components with automated test pipelines.',
-    githubUrl: 'https://github.com/123bruke/Moseb_job_portal',
-    featured: true,
-    type: 'multi-agent'
-  },
-  {
-    id: 'gust-house-management',
-    title: 'Family Guest House Management System',
-    category: 'Full-Stack',
-    secondaryCategories: ['Backend'],
-    description: 'Internal web application for managing guest-house operations: rooms, guests, reservations, stays, payments, expenses, and financial reports.',
-    longDescription: 'A full-featured guest house management system with role-based staff sign-in (Super Admin, Admin, Receptionist), multi-currency payment tracking (ETB, USD), bilingual UI (English/Amharic), audit event logs, and deployment-friendly frontend/backend split (Vite frontend with FastAPI backend). Designed for small to medium guest-house operations to manage reservations, check-ins/outs, billing, and financial reporting.',
-    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Node.js', 'Vite', 'React', 'TypeScript', 'Tailwind CSS'],
-    features: [
-      'Manage rooms, guest records, and reservations with check-in/check-out support',
-      'Record payments in ETB and USD, tracking currencies separately',
-      'Record expenses and generate financial summaries and income details',
-      'Audit events for account and operational changes',
-      'Bilingual interface: English and Amharic, with light and dark themes',
-      'Role-based access: Super Admin, Admin, Receptionist with separate credentials and permissions',
-      'Local development instructions and production notes for Vercel / Render deployments included in README'
-    ],
-    architectureSummary: 'Vite React Frontend -> FastAPI Backend -> PostgreSQL Database with role-based auth and auditing',
-    githubUrl: 'https://github.com/123bruke/Gust_House_Management_System',
-    featured: true,
-    type: 'standard'
-  },
-  {
-    id: 'icog-vendor-agent',
-    title: 'Autonomous Vendor Assessment Agent',
-    category: 'AI Agents',
-    secondaryCategories: ['RAG', 'Backend', 'AI / ML'],
-    description: 'Production-style agentic web application that evaluates software vendor requests using a LangGraph ReAct workflow, policy retrieval, evidence validation, and deterministic decision logic.',
-    longDescription: 'Built as a comprehensive vendor evaluation engine combining agentic reasoning with strict corporate governance. Employs a StateGraph-powered ReAct execution loop that retrieves policy evidence from ChromaDB, validates risk, and generates deterministic audit trails.',
-    technologies: ['Python', 'LangGraph', 'ChromaDB', 'RAG', 'SQLite', 'SQLAlchemy', 'Flask', 'Gemini', 'pytest'],
-    testMetric: '47 automated tests with 100% passing according to the project documentation.',
-    features: [
-      'Stateful ReAct agent loop implementing Reason -> Act -> Observe -> Validate -> Update State',
-      'LangGraph StateGraph orchestration with structured retry and fallback paths',
-      'ChromaDB vector retrieval for institutional policy checking and compliance rules',
-      'Evidence freshness checking, conflict detection, and duplicate-action prevention',
-      'Hardened security against prompt injection in untrusted vendor documents',
-      'SSE-driven real-time execution dashboard and deterministic audit trail',
-      '100% automated test pass rate across 47 comprehensive unit and integration tests'
-    ],
-    architectureSummary: 'ReAct agent loop: Reason -> Act -> Observe -> Validate -> Update State -> Final Decision',
-    architectureNodes: [
-      { id: 'reason', label: 'REASON', role: 'Evaluate request against company policies', highlight: true },
-      { id: 'act', label: 'ACT', role: 'Invoke vector search, risk lookup, or math tools', highlight: false },
-      { id: 'observe', label: 'OBSERVE', role: 'Ingest tool output & check evidence validity', highlight: false },
-      { id: 'validate', label: 'VALIDATE', role: 'Enforce security, freshness & conflict checks', highlight: true },
-      { id: 'state', label: 'UPDATE STATE', role: 'Synchronize audit log & state transitions', highlight: false },
-      { id: 'decision', label: 'DECISION', role: 'Approve, Reject, or Escalate with Audit Trail', highlight: true }
-    ],
-    architectureFlow: [
-      'REASON',
-      'ACT',
-      'OBSERVE',
-      'VALIDATE',
-      'UPDATE STATE',
-      'CONTINUE / STOP'
-    ],
-    githubUrl: 'https://github.com/123bruke/icog_vendor/tree/main/vendor-assessment-agent',
-    featured: true,
-    type: 'react-agent'
-  },
-  {
-    id: 'biocypher-research',
-    title: 'BioCypher Knowledge Graph Research Project',
-    category: 'Research',
-    secondaryCategories: ['AI / ML'],
-    description: 'Research-oriented engineering project integrating complex biomedical datasets into structured graph ontologies using BioCypher, Neo4j, and KGX workflows.',
-    longDescription: 'Focuses on the engineering challenges of biomedical knowledge representation. Combines heterogeneous data sources into a unified knowledge graph schema, mapping entities and relationships using BioCypher adapters and Neo4j.',
-    technologies: ['Python', 'BioCypher', 'Neo4j', 'Biomedical Data', 'Ontologies', 'KGX Workflows', 'MORK', 'Graph Algorithms'],
-    features: [
-      'Declarative schema mapping linking biomedical concepts with standard ontologies',
-      'Entity extraction and relational normalization pipelines',
-      'Neo4j graph database integration for multi-hop graph querying',
-      'KGX (Knowledge Graph Exchange) data pipeline harmonization',
-      'Scalable node and relationship serialization for large-scale biomedical graphs'
-    ],
-    architectureSummary: 'Biomedical Source Data -> Ontology Mapping -> BioCypher Pipeline -> Neo4j Graph Network',
-    architectureNodes: [
-      { id: 'bio-data', label: 'Biomedical Datasets', role: 'Genes, Diseases, Drugs, Pathways', highlight: false },
-      { id: 'ontology', label: 'Ontology Mappings', role: 'Standardized Semantic Vocabularies', highlight: true },
-      { id: 'biocypher', label: 'BioCypher Adapter', role: 'Extraction & Relational Standardization', highlight: true },
-      { id: 'neo4j', label: 'Neo4j Graph Store', role: 'High-Performance Graph Relationships', highlight: true },
-      { id: 'query', label: 'Knowledge Discovery', role: 'Multi-Hop Query & Relational Reasoning', highlight: false }
-    ],
-    githubUrl: 'https://github.com/123bruke/biocypher_intern_project',
+    architectureSummary: 'Document ingestion -> vision-aware chunking -> multimodal embedding -> retrieval + synthesis -> grounded answer output.',
+    githubUrl: 'https://github.com/123bruke/VisionRAG',
     featured: true,
     type: 'knowledge-graph'
   },
   {
-    id: '3d-chemistry-lab',
+    id: 'moseb-ai-portal',
+    title: 'Moseb AI-Powered Job Portal',
+    category: 'AI Agents',
+    secondaryCategories: ['Full-Stack', 'AI / ML'],
+    description: 'Enterprise-scale AI-powered job matching platform leveraging intelligent agents for resume analysis, job recommendation, and candidate-employer alignment.',
+    technologies: ['React 19', 'TypeScript', 'Python', 'LangGraph', 'FastAPI', 'PostgreSQL'],
+    features: [
+      'Candidate and employer job discovery flows',
+      'AI-based resume and job alignment analysis',
+      'Agentic recommendation and decision support',
+      'Production-ready, role-aware matching workflow'
+    ],
+    githubUrl: 'https://github.com/123bruke/Moseb-AI-Portal',
+    featured: true,
+    type: 'react-agent'
+  },
+  {
+    id: 'family-guest-house',
+    title: 'Family Guest House Management System',
+    category: 'Full-Stack',
+    secondaryCategories: ['Backend'],
+    description: 'Internal web application for managing guest-house operations: rooms, guests, reservations, stays, payments, expenses, and financial reports.',
+    technologies: ['Python', 'FastAPI', 'PostgreSQL', 'Node.js', 'React'],
+    features: [
+      'Room and reservation management',
+      'Guest stay and payment tracking',
+      'Expense reporting and financial summaries',
+      'Operations-focused internal dashboard'
+    ],
+    githubUrl: 'https://github.com/123bruke/Family-Guest-House',
+    featured: true,
+    type: 'standard'
+  },
+  {
+    id: 'vendor-assessment-agent',
+    title: 'Autonomous Vendor Assessment Agent',
+    category: 'AI Agents',
+    secondaryCategories: ['RAG', 'Full-Stack'],
+    description: 'Production-style agentic web application that evaluates software vendor requests using a LangGraph ReAct workflow, policy retrieval, evidence validation, and deterministic decision logic.',
+    technologies: ['Python', 'LangGraph', 'ChromaDB', 'RAG', 'FastAPI', 'React'],
+    features: [
+      'Policy-aware vendor evaluation workflow',
+      'Evidence retrieval and validation pipeline',
+      'Deterministic decision logic and structured output',
+      'Automated test coverage and review support'
+    ],
+    githubUrl: 'https://github.com/123bruke/Autonomous-Vendor-Assessment-Agent',
+    featured: true,
+    type: 'standard'
+  },
+  {
+    id: 'biocypher-knowledge-graph',
+    title: 'BioCypher Knowledge Graph Research Project',
+    category: 'Research',
+    secondaryCategories: ['AI / ML', 'Backend'],
+    description: 'Research-oriented engineering project integrating complex biomedical datasets into structured graph ontologies using BioCypher, Neo4j, and KGX workflows.',
+    technologies: ['Python', 'BioCypher', 'Neo4j', 'Biomedical Data', 'Knowledge Graphs'],
+    features: [
+      'Data harmonization from biomedical sources',
+      'Ontology-aware knowledge mapping',
+      'Graph-based relationship modeling',
+      'Research-grade data engineering pipeline'
+    ],
+    githubUrl: 'https://github.com/123bruke/BioCypher-Knowledge-Graph',
+    featured: true,
+    type: 'knowledge-graph'
+  },
+  {
+    id: 'virtual-3d-chemistry-lab',
     title: 'Virtual 3D Chemistry Laboratory',
     category: '3D / Interactive',
     secondaryCategories: ['Full-Stack'],
     description: 'An interactive browser-based 3D chemistry laboratory designed for learning by doing, with physical equipment simulation and AI guidance.',
-    longDescription: 'A modern web-based simulation environment that gives students hands-on lab experience directly in their browser. Implements accurate physics-based liquid transfers, digital apparatus measurement, density verification, and an interactive AI lab guide.',
-    technologies: ['React 19', 'TypeScript', 'Three.js', 'React Three Fiber', 'Zustand', 'Tailwind CSS', 'Vite', 'Express', 'Google GenAI SDK'],
+    technologies: ['React 19', 'TypeScript', 'Three.js', 'React Three Fiber', 'WebGL'],
     features: [
-      'Interactive 3D laboratory scene built with React Three Fiber and Three.js',
-      'Apparatus manipulation: Digital balance with real-time taring and weighing',
-      'Graduated cylinder liquid transfer simulation with volume tracking',
-      'Deterministic density and mass calculation validation logic',
-      'Guided experiment workflow with reactive state management via Zustand',
-      'Dynamic laboratory lighting, heating effects, and camera angle controls',
-      'Integrated AI experiment assistant powered by Google GenAI SDK'
+      'Interactive 3D equipment simulation',
+      'Hands-on chemistry learning flow',
+      'Browser-based lab experience',
+      'AI-assisted educational interactions'
     ],
-    architectureSummary: 'R3F Canvas -> Zustand State Machine -> Physics & Measurement Calculations -> AI Lab Assistant',
-    githubUrl: 'https://github.com/123bruke/3d_labs',
+    githubUrl: 'https://github.com/123bruke/Virtual-3D-Chemistry-Lab',
     featured: true,
     type: '3d-lab'
   },
   {
-    id: 'chatflow-app',
+    id: 'chatflow',
     title: 'ChatFlow — Real-Time Messaging Application',
     category: 'Full-Stack',
-    secondaryCategories: ['Backend'],
+    secondaryCategories: ['AI / ML'],
     description: 'A responsive real-time messaging application built with React, TypeScript, Firebase Authentication, and Firestore.',
-    longDescription: 'Engineered for smooth communication with high operational reliability. Features instant one-to-one messaging, live presence indicators (online/offline/last seen), read receipts, media uploads, and audited security rules.',
-    technologies: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Firebase', 'Firestore', 'Motion', 'Lucide React'],
+    technologies: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS', 'Firebase'],
     features: [
-      'Sub-second real-time messaging driven by Firestore snapshot listeners',
-      'Multi-provider Firebase Auth (Google OAuth, Email/Password, redirect fallbacks)',
-      'Real-time user presence tracking (online state, offline detection, last active timestamp)',
-      'Granular read receipts, unread badges, and optimistic message delivery',
-      'Rich media messaging with image uploads and document attachments',
-      'Dynamic user search and profile configuration',
-      'Comprehensive, audited Firestore security rules for strict data isolation'
+      'Real-time messaging flows',
+      'Authentication and user sessions',
+      'Responsive chat interfaces',
+      'Firestore-backed real-time update handling'
     ],
-    architectureSummary: 'React Client -> Firebase Auth -> Firestore Realtime Listeners -> Secure Data Rules',
-    githubUrl: 'https://github.com/123bruke/chat_app',
+    githubUrl: 'https://github.com/123bruke/ChatFlow',
     featured: true,
     type: 'realtime-chat'
   },
@@ -260,38 +187,18 @@ export const FEATURED_PROJECTS: Project[] = [
     id: 'ai-career-coach',
     title: 'AI Career Coach — Multi-Agent System',
     category: 'AI Agents',
-    secondaryCategories: ['AI / ML'],
+    secondaryCategories: ['AI / ML', 'Full-Stack'],
     description: 'Multi-agent career intelligence pipeline coordinating skill gap analysis, personalized roadmaps, resume auditing, and interview preparation.',
-    longDescription: 'Leverages LangGraph and Google Gemini to assemble a team of coordinated AI specialists. A master supervisor delegates tasks to dedicated sub-agents, each focused strictly on skill gap analysis, personalized roadmaps, resume auditing, and interview coaching.',
-    technologies: ['Python', 'LangGraph', 'LangChain', 'Google Gemini', 'Multi-Agent Architecture'],
+    technologies: ['Python', 'LangGraph', 'LangChain', 'Google Gemini', 'FastAPI', 'React'],
     features: [
-      'Dedicated multi-agent pipeline coordinated by a centralized Supervisor agent',
-      'Deep skill analysis mapping candidate strengths and missing competencies',
-      'Tailored career recommendations aligned with current market demand',
-      'Step-by-step personalized learning roadmaps with curated milestones',
-      'Targeted resume review identifying impact gaps and syntax improvements',
-      'Simulated technical interview preparation with evaluative feedback loops'
+      'Skill gap evaluation and recommendations',
+      'Personalized roadmap generation',
+      'Resume audit and interview prep support',
+      'Multi-agent orchestration workflow'
     ],
-    architectureSummary: 'Supervisor -> Skill Analysis -> Career Recommender -> Roadmap -> Resume Review -> Interview Prep -> Final Report',
-    architectureNodes: [
-      { id: 'cc-skills', label: 'Skill Analysis', role: 'Extract core competencies & identify gaps', highlight: false },
-      { id: 'cc-rec', label: 'Career Recommendations', role: 'Role alignment & trajectory planning', highlight: false },
-      { id: 'cc-roadmap', label: 'Learning Roadmap', role: 'Phased milestones & resource curation', highlight: true },
-      { id: 'cc-resume', label: 'Resume Review', role: 'Impact phrasing & ATS optimization', highlight: false },
-      { id: 'cc-interview', label: 'Interview Prep', role: 'Domain-specific question simulation', highlight: false },
-      { id: 'cc-report', label: 'Final Report', role: 'Structured multi-agent synthesis', highlight: true }
-    ],
-    architectureFlow: [
-      'Skill Analysis',
-      'Career Recommendations',
-      'Learning Roadmap',
-      'Resume Review',
-      'Interview Preparation',
-      'Final Report'
-    ],
-    githubUrl: 'https://github.com/123bruke/Local_AI_Agent/tree/main/ai_career_coach/ai_career_coach',
+    githubUrl: 'https://github.com/123bruke/AI-Career-Coach',
     featured: true,
-    type: 'pipeline'
+    type: 'multi-agent'
   }
 ];
 
@@ -375,21 +282,188 @@ export const MORE_PROJECTS: Project[] = [
     githubUrl: 'https://github.com/123bruke',
     featured: false,
     type: 'standard'
-  },
-  {
-    id: 'digital-e-student',
-    title: 'Digital E-Student',
-    category: 'Full-Stack',
-    secondaryCategories: ['Backend'],
-    description: 'Comprehensive academic portal unifying assignment scheduling, grade tracking, peer discussion forums, and university announcements.',
-    technologies: ['TypeScript', 'React', 'Node.js', 'Express', 'MongoDB'],
-    features: [
-      'Modular course management with role-based student access',
-      'Deadline synchronization with calendar alerts',
-      'Discussion channels with markdown formatting support'
-    ],
-    githubUrl: 'https://github.com/123bruke',
-    featured: false,
-    type: 'standard'
   }
 ];
+
+export const PROJECT_CATEGORIES: ProjectCategory[] = ['All', 'AI / ML', 'AI Agents', 'RAG', 'Full-Stack', 'Computer Vision', '3D / Interactive', 'Research', 'Backend'];
+
+export const FEATURED_PROJECT_IDS = FEATURED_PROJECTS.map((project) => project.id);
+
+export const PROJECT_COUNT = FEATURED_PROJECTS.length + MORE_PROJECTS.length;
+
+export default FEATURED_PROJECTS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
