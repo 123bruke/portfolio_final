@@ -18,6 +18,7 @@ import {
 import { FEATURED_PROJECTS } from './data/projects';
 import { PERSONAL_INFO } from './data/personal';
 import { SKILL_CATEGORIES } from './data/skills';
+import type { Project } from './types';
 import portraitImage from './assets/images/biruk_portrait_1789856194221.jpg';
 import './portfolio-redesign.css';
 
@@ -31,6 +32,29 @@ const navigation = [
 
 const filters = ['All', 'AI / ML', 'AI Agents', 'Full-Stack', 'Research'] as const;
 type ProjectFilter = (typeof filters)[number];
+
+// Keep the football platform first so it is the first project visitors see.
+const footballDigitalProject: Project = {
+  id: 'ethio-football-digitals',
+  title: 'Ethio Football Digitals — PitchSide',
+  category: 'Full-Stack',
+  secondaryCategories: ['AI / ML', 'AI Agents', '3D / Interactive', 'Research', 'Backend'],
+  description: 'A football platform bringing together a player community, direct messaging, an AI football assistant, match predictions, a private admin app, and the original 5v5 game.',
+  longDescription: 'PitchSide combines a public player experience with a separately secured admin app and supporting AI services. The repository preserves its original playable 3D 5v5 football game while adding social features and a match-prediction workflow.',
+  technologies: ['React 19', 'TypeScript', 'Three.js', 'FastAPI', 'PostgreSQL', 'Neo4j', 'scikit-learn'],
+  features: [
+    'Player profiles, community posts, discover, and follow',
+    'Direct messaging for mutual-follow connections',
+    'Football and statistics assistant with a clear fallback when the optional local model is unavailable',
+    'Match outcome prediction service; model training requires a real historical dataset',
+    'Separate admin frontend with server-verified administrator permissions',
+    'Original 3D 5v5 game remains playable',
+  ],
+  architectureSummary: 'React player and admin frontends -> FastAPI services -> PostgreSQL and Neo4j; optional local assistant and a separately trained match predictor.',
+  githubUrl: 'https://github.com/123bruke/Ethio_Football_Digitals',
+  featured: true,
+  type: 'standard',
+};
 
 function SectionHeading({ eyebrow, title, description }: { eyebrow: string; title: string; description?: string }) {
   return (
@@ -46,7 +70,7 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All');
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const projects = useMemo(() => FEATURED_PROJECTS.filter((project) => {
+  const projects = useMemo(() => [footballDigitalProject, ...FEATURED_PROJECTS].filter((project) => {
     if (activeFilter === 'All') return true;
     return project.category === activeFilter || project.secondaryCategories.includes(activeFilter);
   }), [activeFilter]);
@@ -140,13 +164,13 @@ export default function App() {
         </section>
 
         <section className="projects-section section-wrap section-pad" id="projects">
-          <SectionHeading eyebrow="Selected work" title="Projects I’m proud of." description="A selection of things I’ve built across AI, full-stack development, and research. Choose a category to explore." />
+          <SectionHeading eyebrow="Selected work" title="Projects I’m proud of." description="PitchSide leads the list, followed by selected work across AI, full-stack development, and research. Choose a category to explore." />
           <div className="project-filters" aria-label="Filter projects">
             {filters.map((filter) => <button key={filter} type="button" className={activeFilter === filter ? 'filter-chip active' : 'filter-chip'} onClick={() => setActiveFilter(filter)} aria-pressed={activeFilter === filter}>{filter}</button>)}
           </div>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <article className="project-card" key={project.id}>
+              <article className={`project-card${project.id === 'ethio-football-digitals' ? ' project-card-spotlight' : ''}`} key={project.id}>
                 <div className={`project-art project-art-${index % 4}`} aria-hidden="true"><span className="project-art-index">0{index + 1}</span><div className="project-art-shape"><Layers3 size={34} strokeWidth={1.2} /></div><span className="project-category">{project.category}</span></div>
                 <div className="project-content">
                   <div className="project-title-row"><h3>{project.title}</h3><a href={project.githubUrl} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}><ArrowUpRight size={18} /></a></div>
